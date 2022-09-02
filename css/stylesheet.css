@@ -5,3 +5,16 @@ body {
 .booster-reactions-block {
     display: none;
 }
+
+.post-author-wrap {
+    display: flex;
+    background-color: rgb(204, 204, 204);
+}
+
+.author-container {
+    margin: 15px 20px 0 0;
+}
+
+.profile-img {
+    border-radius: 50%;
+}

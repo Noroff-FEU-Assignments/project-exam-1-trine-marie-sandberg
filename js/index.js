@@ -53,7 +53,7 @@ async function getAutorInfo() {
 
         authorContainer.innerHTML = `<div>${autorJson.name}</div>
                                      <div>${autorJson.name}</div>
-                                     <img src="${autorJson.avatar_urls[48]}"></img>`;
+                                     <img src="${autorJson.avatar_urls[48]}" class="profile-img"></img>`;
 
     } catch(error) {
         console.log(error);
