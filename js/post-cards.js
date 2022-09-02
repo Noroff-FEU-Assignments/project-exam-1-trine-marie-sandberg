@@ -80,4 +80,4 @@ async function displayPosts() {
     console.log(error);
   };
 };
-}
+};
