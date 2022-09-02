@@ -2,6 +2,8 @@ const postUrl = "http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/w
 const postContainer = document.querySelector(".post-container");
 postContainer.innerHTML = "Loading . . .";
 
+let autorUrl
+
 async function getPosts() {
 
     try {
@@ -19,12 +21,14 @@ async function getPosts() {
         console.log("SINGLE POST URL: " + singlePostUrl);
 
         //get autor details
-        let autorUrl = json[i]._links.author[0].href;
+        autorUrl = json[i]._links.author[0].href;
         console.log("AUTOR URL: " + autorUrl);
         //${json[i].content.rendered}
         postContainer.innerHTML += `<div class="post">${json[i].excerpt.rendered}<div>
                                     <div>${json[i].title.rendered}</div>
                                     <a href="${json[i].guid.rendered}"><div>${json[i].guid.rendered}</div></a>`;
+
+                                    getAutorInfo()
     };
     
     } catch(error) {
@@ -36,3 +40,15 @@ async function getPosts() {
 }
 
 getPosts();
+
+//Use inside post api call, inside loop to get autor info
+async function getAutorInfo() {
+
+    try {
+        let autorResponse = await fetch(autorUrl);
+        let autorJson = await autorResponse.json();
+        console.log("AUTORJSON: " + autorJson.name);
+    } catch(error) {
+        console.log(error);
+    }
+}
