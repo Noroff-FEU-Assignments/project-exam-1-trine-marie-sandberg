@@ -8,7 +8,6 @@ body {
 
 .post-author-wrap {
     display: flex;
-    background-color: rgb(236, 236, 236);
 }
 
 .author-container {
@@ -17,4 +16,8 @@ body {
 
 .profile-img {
     border-radius: 50%;
+}
+
+.post-card {
+    background-color: rgb(236, 236, 236);
 }

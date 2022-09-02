@@ -4,7 +4,6 @@ postContainer.innerHTML = "Loading . . .";
 
 let autorUrl
 const authorContainer = document.querySelector(".author-container");
-authorContainer.innerHTML = "<p>Loading . . .</p>"
 
 async function getPosts() {
 
@@ -26,9 +25,12 @@ async function getPosts() {
         autorUrl = json[i]._links.author[0].href;
         console.log("AUTOR URL: " + autorUrl);
         //${json[i].content.rendered}
-        postContainer.innerHTML += `<div class="post">${json[i].excerpt.rendered}<div>
-                                    <div>${json[i].title.rendered}</div>
-                                    <a href="${json[i].guid.rendered}"><div>${json[i].guid.rendered}</div></a>`;
+        postContainer.innerHTML += `<a href="${json[i].guid.rendered}">
+                                      <div class="post-card">
+                                          <div>${json[i].title.rendered}</div>
+                                          <div class="post">${json[i].excerpt.rendered}<div>
+                                       </div>
+                                    </a>`;
 
                                     getAutorInfo()
     };
@@ -51,13 +53,11 @@ async function getAutorInfo() {
         let autorJson = await autorResponse.json();
         console.log("AUTORJSON: " + autorJson.name);
 
-        authorContainer.innerHTML = `<img src="${autorJson.avatar_urls[48]}" class="profile-img"></img>
-                                     <div>${autorJson.name}</div>
-                                     <div>${autorJson.name}</div>
-                                     `;
+        authorContainer.innerHTML += `<img src="${autorJson.avatar_urls[48]}" class="profile-img"></img>
+                                     <div>${autorJson.name}</div>`;
 
     } catch(error) {
         console.log(error);
-        authorContainer.innerHTML = "<p>Failed to load author information</p>"
+        authorContainer.innerHTML = "<p>Failed to load author information</p>";
     }
 }
