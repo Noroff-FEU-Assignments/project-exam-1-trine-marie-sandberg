@@ -14,8 +14,13 @@ async function getPosts() {
     postContainer.innerHTML = "";
 
     for(let i = 0; i < json.length; i++) {
+        //get single post url
         singlePostUrl = json[i].guid.rendered;
-        console.log(singlePostUrl);
+        console.log("SINGLE POST URL: " + singlePostUrl);
+
+        //get autor details
+        let autorUrl = json[i]._links.author[0].href;
+        console.log("AUTOR URL: " + autorUrl);
         //${json[i].content.rendered}
         postContainer.innerHTML += `<div class="post">${json[i].excerpt.rendered}<div>
                                     <div>${json[i].title.rendered}</div>
