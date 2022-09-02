@@ -51,9 +51,10 @@ async function getAutorInfo() {
         let autorJson = await autorResponse.json();
         console.log("AUTORJSON: " + autorJson.name);
 
-        authorContainer.innerHTML = `<div>${autorJson.name}</div>
+        authorContainer.innerHTML = `<img src="${autorJson.avatar_urls[48]}" class="profile-img"></img>
                                      <div>${autorJson.name}</div>
-                                     <img src="${autorJson.avatar_urls[48]}" class="profile-img"></img>`;
+                                     <div>${autorJson.name}</div>
+                                     `;
 
     } catch(error) {
         console.log(error);

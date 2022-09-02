@@ -8,11 +8,11 @@ body {
 
 .post-author-wrap {
     display: flex;
-    background-color: rgb(204, 204, 204);
+    background-color: rgb(236, 236, 236);
 }
 
 .author-container {
-    margin: 15px 20px 0 0;
+    margin: 15px 20px 0 10px;
 }
 
 .profile-img {
