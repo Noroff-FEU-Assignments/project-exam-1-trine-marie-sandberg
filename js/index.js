@@ -2,6 +2,8 @@ const postUrl = "http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/w
 const postContainer = document.querySelector(".post-container");
 postContainer.innerHTML = "Loading . . .";
 
+let postCardObject;
+let cardArray = [];
 let autorUrl
 const authorContainer = document.querySelector(".author-container");
 
@@ -21,20 +23,23 @@ async function getPosts() {
         singlePostUrl = json[i].guid.rendered;
         console.log("SINGLE POST URL: " + singlePostUrl);
 
-        //get autor details
+        postCardObject = { postUrl: json[i].guid.rendered,
+                           title: json[i].title.rendered,
+                           postPreview: json[i].excerpt.rendered
+                         };
+        cardArray.push(postCardObject);
+
+        console.log("postCardObject: " + postCardObject);
+
+        //AUTHOR DETAILS LINK
         autorUrl = json[i]._links.author[0].href;
         console.log("AUTOR URL: " + autorUrl);
-        //${json[i].content.rendered}
-        postContainer.innerHTML += `<a href="${json[i].guid.rendered}">
-                                      <div class="post-card">
-                                          <div>${json[i].title.rendered}</div>
-                                          <div class="post">${json[i].excerpt.rendered}<div>
-                                       </div>
-                                    </a>`;
 
-                                    getAutorInfo()
+        
     };
-    
+
+    displayPosts();
+
     } catch(error) {
         postContainer.innerHTML = `<div>Sorry, we could not load content. Please try to refresh the page or try again later.</div>
                                    <button>Refresh</button>
@@ -43,23 +48,38 @@ async function getPosts() {
     };
 }
 
+
 getPosts();
 
 //Use inside post api call, inside loop to get autor info
-async function getAutorInfo() {
+async function displayPosts() {
 
     try {
+        console.log("CARDARRAY " + cardArray)
         let autorResponse = await fetch(autorUrl);
         let autorJson = await autorResponse.json();
         console.log("AUTORJSON: " + autorJson.name);
 
-        authorContainer.innerHTML += `<div class="author-card">
-                                         <img src="${autorJson.avatar_urls[48]}" class="profile-img"></img>
-                                         <div>${autorJson.name}</div>
-                                      </div>`;
+        let authorCardObject = { image: autorJson.avatar_urls[48],
+            name: autorJson.name
+           };
+           console.log("authorCardObject: " + authorCardObject);
+    for(i = 0; i < cardArray.length; i++) {
 
+        postContainer.innerHTML += `<a href="${cardArray[i].postUrl}">
+                                      <div class="post-card">
+                                          <div>
+                                             <image src="${authorCardObject.image}">
+                                             <p>${authorCardObject.name}</p>
+                                          </div>
+                                          <div>
+                                             <h3>${cardArray[i].title}</h3>
+                                             <p>${cardArray[i].postPreview}</p>
+                                          </div>
+                                       </div>
+                                    </a>`;
+}
     } catch(error) {
         console.log(error);
-        authorContainer.innerHTML = "<p>Failed to load author information</p>";
     }
 }
