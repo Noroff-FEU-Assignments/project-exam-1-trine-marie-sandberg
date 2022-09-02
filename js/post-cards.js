@@ -1,4 +1,4 @@
-function getPostCards() {
+export function getPostCards() {
     const postUrl = "http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-json/wp/v2/posts";
 const postContainer = document.querySelector(".post-container");
 postContainer.innerHTML = "Loading . . .";
