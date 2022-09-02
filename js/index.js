@@ -9,15 +9,18 @@ async function getPosts() {
     const json = await response.json();
     console.log(json)
 
-    let singlePostUrl;
+    let singlePostUrl = "http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/?"
 
     postContainer.innerHTML = "";
 
     for(let i = 0; i < json.length; i++) {
-        singlePostUrl = json[i].guid.rendered;
+        postId = json[i].id;
         console.log(singlePostUrl);
+        //${json[i].content.rendered}
         postContainer.innerHTML += `<div class="post">${json[i].excerpt.rendered}<div>
-                                    <div>${json[i].excerpt.rendered}</div>`;
+                                    <div>${json[i].title.rendered}</div>
+                                    <div>${json[i].title.rendered}</div>
+                                    <p>${singlePostUrl + postId}</p>`;
     };
     
     } catch(error) {
