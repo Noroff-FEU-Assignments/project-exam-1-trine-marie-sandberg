@@ -20,4 +20,10 @@ body {
 
 .post-card {
     background-color: rgb(236, 236, 236);
+    margin: 15px;
+    padding: 10px;
+}
+
+.author-card {
+    margin-bottom: 55px;
 }
