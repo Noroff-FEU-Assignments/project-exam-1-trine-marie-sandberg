@@ -12,12 +12,12 @@ async function getPosts() {
     postContainer.innerHTML = "";
 
     for(let i = 0; i < json.length; i++) {
-        postContainer.innerHTML += `<div>${json[i].content.rendered}<div>`
+        postContainer.innerHTML += `<div>${json[i].content.rendered}<div>`;
     };
     
     } catch(error) {
-        postContainer.innerHTML = `<div>${error}</div>`
+        postContainer.innerHTML = `<div>${error}</div>`;
     };
 }
 
-getPosts()
+getPosts();
