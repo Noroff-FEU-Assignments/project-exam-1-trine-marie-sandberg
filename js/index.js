@@ -9,15 +9,22 @@ async function getPosts() {
     const json = await response.json();
     console.log(json)
 
+    let singlePostUrl;
+
     postContainer.innerHTML = "";
 
     for(let i = 0; i < json.length; i++) {
-        postContainer.innerHTML += `<div class="post">${json[i].content.rendered}<div>
-                                    <div>${json[i].content.autor}</div>`;
+        singlePostUrl = json[i].guid.rendered;
+        console.log(singlePostUrl);
+        postContainer.innerHTML += `<div class="post">${json[i].excerpt.rendered}<div>
+                                    <div>${json[i].excerpt.rendered}</div>`;
     };
     
     } catch(error) {
-        postContainer.innerHTML = `<div>${error}</div>`;
+        postContainer.innerHTML = `<div>Sorry, we could not load content. Please try to refresh the page or try again later.</div>
+                                   <button>Refresh</button>
+                                   <div>Type of error: ${error}</div>`;
+        console.log(error);
     };
 }
 
