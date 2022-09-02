@@ -6,10 +6,6 @@ body {
     display: none;
 }
 
-.author-container {
-    margin: 15px 20px 0 10px;
-}
-
 .profile-img {
     border-radius: 50%;
 }
@@ -21,6 +17,6 @@ body {
     padding: 10px;
 }
 
-.author-card {
-    margin-bottom: 55px;
+.author-wrap {
+    margin: 20px;
 }
