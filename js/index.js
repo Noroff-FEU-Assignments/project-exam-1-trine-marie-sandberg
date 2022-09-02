@@ -57,5 +57,6 @@ async function getAutorInfo() {
 
     } catch(error) {
         console.log(error);
+        authorContainer.innerHTML = "<p>Failed to load author information</p>"
     }
 }
