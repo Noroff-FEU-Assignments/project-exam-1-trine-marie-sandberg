@@ -1,5 +1,7 @@
+//MAKE API CALL TO ...WP/V2/POSTS AND CREATE HTML FOR DISPLAYING POST CARDS
 export function getPostCards() {
-    const postUrl = "http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-json/wp/v2/posts";
+
+const postUrl = "http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-json/wp/v2/posts";
 const postContainer = document.querySelector(".post-container");
 postContainer.innerHTML = "Loading . . .";
 
@@ -38,10 +40,6 @@ async function getPosts() {
     displayPosts();
 
     } catch(error) {
-
-        postContainer.innerHTML = `<div>Sorry, we could not load content. Please try to refresh the page or try again later.</div>
-                                   <button>Refresh</button>
-                                   <div>Type of error: ${error}</div>`;
         console.log(error);
     };
 };
@@ -76,6 +74,10 @@ async function displayPosts() {
                                     </a>`;
 
 } } catch(error) {
+
+    postContainer.innerHTML = `<div>Sorry, we could not load content. Please try to refresh the page or try again later.</div>
+                               <button>Refresh</button>
+                               <div>Type of error: ${error}</div>`
     
     console.log(error);
   };
