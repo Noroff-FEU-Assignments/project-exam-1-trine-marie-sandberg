@@ -12,7 +12,8 @@ async function getPosts() {
     postContainer.innerHTML = "";
 
     for(let i = 0; i < json.length; i++) {
-        postContainer.innerHTML += `<div>${json[i].content.rendered}<div>`;
+        postContainer.innerHTML += `<div class="post">${json[i].content.rendered}<div>
+                                    <div>${json[i].content.autor}</div>`;
     };
     
     } catch(error) {
