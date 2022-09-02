@@ -3,6 +3,8 @@ const postContainer = document.querySelector(".post-container");
 postContainer.innerHTML = "Loading . . .";
 
 let autorUrl
+const authorContainer = document.querySelector(".author-container");
+authorContainer.innerHTML = "<p>Loading . . .</p>"
 
 async function getPosts() {
 
@@ -48,6 +50,11 @@ async function getAutorInfo() {
         let autorResponse = await fetch(autorUrl);
         let autorJson = await autorResponse.json();
         console.log("AUTORJSON: " + autorJson.name);
+
+        authorContainer.innerHTML = `<div>${autorJson.name}</div>
+                                     <div>${autorJson.name}</div>
+                                     <img src="${autorJson.avatar_urls[48]}"></img>`;
+
     } catch(error) {
         console.log(error);
     }
