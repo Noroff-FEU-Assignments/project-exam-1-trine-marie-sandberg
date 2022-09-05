@@ -1,26 +1,8 @@
 @import url(/css/header.css);
+@import url(/css/post-cards.css);
 
 body {
     margin: 0 40px;
-}
-
-.booster-reactions-block {
-    display: none;
-}
-
-.profile-img {
-    border-radius: 50%;
-}
-
-.post-card {
-    display: flex;
-    background-color: rgb(236, 236, 236);
-    margin: 15px;
-    padding: 10px;
-}
-
-.author-wrap {
-    margin: 20px;
 }
 
 h2 {

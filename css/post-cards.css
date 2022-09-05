@@ -1,0 +1,14 @@
+.profile-img {
+    border-radius: 50%;
+}
+
+.post-card {
+    display: flex;
+    background-color: rgb(236, 236, 236);
+    margin: 15px;
+    padding: 10px;
+}
+
+.author-wrap {
+    margin: 20px;
+}
