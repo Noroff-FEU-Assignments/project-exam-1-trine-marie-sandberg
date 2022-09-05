@@ -1,10 +1,25 @@
 .search-lens {
     height: auto;
     width: 100%;
-    max-width: 25px;
+    padding: 5px;
+    max-width: 20px;
 }
 
 .media-icon {
     color: #4B4B4B;
     font-size: 1.5rem;
+}
+
+.search-label {
+    display: none;
+}
+
+#search {
+    padding: 5px;
+    border-radius: 7px;
+    border: 1px solid #4B4B4B;
+}
+
+.search-wrap {
+    display: flex;
 }
