@@ -7,7 +7,12 @@ body {
     margin: 0 40px;
 }
 
-h2 {
+h1 {
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+h2, h1 {
     font-family: auto-pro-new, sans-serif;
     font-weight: 300;
     color: #373737;
@@ -16,7 +21,8 @@ h2 {
 p {
     font-family: auto-pro-new, sans-serif;
     font-weight: 300;
-    font-size: clamp(5px, 2rem, 25px);
+    font-size: 1rem;
+    padding: 5px;
     color: #373737;
 }
 

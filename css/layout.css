@@ -5,14 +5,15 @@
 }
 
 .content-sidebar-c {
-    flex-grow: 2;
+    flex-grow: 10;
+    min-width: 400px;
     background-color: skyblue;
-    max-width: 1000px;
 }
 
 .content-sidebar-s {
-    flex-grow: 1.5;
-    background-color: blueviolet;
+    background-color: #F9F9F9;
+    flex-grow: 1;
+    max-width: 500px;
 }
 
 /* IMAGE AND POSTCARDS */

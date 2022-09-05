@@ -27,7 +27,7 @@ export function getGallery() {
                     };
 
                     slideShowPreveiousBtn.onclick = function preveiousImg() {
-                        console.log("clicked")
+
                         gallerySlideshowContainer.style.backgroundImage = `url("${json[2].source_url}")`;
                     }
                 };
