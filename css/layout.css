@@ -1,0 +1,14 @@
+.content-sidebar-wrap {
+    display: flex;
+}
+
+.content-sidebar-c {
+    flex-grow: 2;
+    background-color: skyblue;
+    height: 60px;
+}
+
+.content-sidebar-s {
+    flex-grow: 1.5;
+    background-color: blueviolet;
+}
