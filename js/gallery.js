@@ -11,20 +11,16 @@ export function getGallery() {
             console.log(json)
 
             for(let i = 0; i < json.length; i++) {
+
                 console.log(json[i])
                 let counter = 0;
-                gallerySlideshowContainer.style.backgroundImage += `url("${json[i].source_url}")`;
 
-                gallerySlideshowContainer.style.backgroundImage = `url("${json[i].source_url}")`;
+                gallerySlideshowContainer.style.backgroundImage += `url("${json[2].source_url}")`;
+                
+                const slideShowNextBtn = document.querySelector(".slideshow-next-btn");
+                const slideShowPreveiousBtn = document.querySelector(".slideshow-previous-btn");
 
-                    const slideShowNextBtn = document.querySelector(".slideshow-next-btn");
-                    const slideShowPreveiousBtn = document.querySelector(".slideshow-previous-btn");
-
-                    if(json[i].alt_text !== "gallery") {
-                        continue
-                    };
-
-                    slideShowNextBtn.onclick = function nextImg() {
+                slideShowNextBtn.onclick = function nextImg() {
 
                         if(counter >= json.length){
                         console.log("im  too big")
@@ -39,24 +35,26 @@ export function getGallery() {
                         }
                     };
 
-                    slideShowPreveiousBtn.onclick = function preveiousImg() {
+                slideShowPreveiousBtn.onclick = function preveiousImg() {
 
-                        if(counter < 1){
+                    if(counter < 1){
+                        console.log("im  too small")
+                        counter = 7;
+                        console.log(counter)
 
-                            console.log("im  too small")
-                            counter = 7;
-                            console.log(counter)
-
-                            } else{
+                    } else{
                         gallerySlideshowContainer.style.backgroundImage = `url("${json[counter --].source_url}")`;
                         console.log(counter)
-                        }
                     }
-                };
-            } catch(error) {
-                console.log(error);
+                }    
+                    
             };
+            
+        } catch(error) {
+
+            console.log(error);
         };
+    };
 
     getImages();
 };
