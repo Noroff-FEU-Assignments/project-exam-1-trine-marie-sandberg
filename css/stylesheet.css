@@ -1,3 +1,5 @@
+@import url(/css/header.css);
+
 body {
     margin: 0 40px;
 }
@@ -19,4 +21,30 @@ body {
 
 .author-wrap {
     margin: 20px;
+}
+
+h2 {
+    font-family: auto-pro-new, sans-serif;
+    font-weight: 300;
+    color: #373737;
+}
+
+p {
+    font-family: auto-pro-new, sans-serif;
+    font-weight: 300;
+    color: #373737;
+}
+
+.header-special {
+    font-family: aviano-flare, sans-serif;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: #373737;
+}
+
+ul {
+    list-style-type: none;
 }
