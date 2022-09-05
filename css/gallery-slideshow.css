@@ -1,0 +1,17 @@
+.gallery-slideshow-container {
+    background-size: cover;
+    min-height: 500px;
+}
+
+.slideshow-next-btn {
+    padding: 50px 20px;
+    border: none;
+    background-color: #EEF2EC;
+    opacity: 40%;
+}
+
+.button-flex-wrap {
+    padding-top: 250px;
+    display: flex;
+    justify-content: space-between;
+}

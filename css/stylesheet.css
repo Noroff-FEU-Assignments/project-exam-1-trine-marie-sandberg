@@ -1,6 +1,7 @@
 @import url(/css/header.css);
 @import url(/css/post-cards.css);
 @import url(/css/layout.css);
+@import url(/css/gallery-slideshow.css);
 
 body {
     margin: 0 40px;
