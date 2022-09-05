@@ -2,7 +2,7 @@
 export function getPostCards() {
 
 const postUrl = "http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-json/wp/v2/posts";
-const postContainer = document.querySelector(".post-container");
+const postContainer = document.querySelector(".post-card-container");
 postContainer.innerHTML = "Loading . . .";
 
 let postCardObject;
