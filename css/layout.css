@@ -7,6 +7,7 @@
 .content-sidebar-c {
     flex-grow: 2;
     background-color: skyblue;
+    max-width: 1000px;
 }
 
 .content-sidebar-s {

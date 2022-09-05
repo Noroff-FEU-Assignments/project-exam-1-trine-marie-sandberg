@@ -39,3 +39,8 @@ ul {
 li {
     display: inline;
 }
+
+.auto-img {
+    height: auto;
+    width: 100%;
+}

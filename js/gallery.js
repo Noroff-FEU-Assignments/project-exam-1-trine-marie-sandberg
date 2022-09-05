@@ -18,7 +18,7 @@ export function getGallery() {
                 if(json[i].alt_text === "gallery") {
 
                     console.log(json[i].source_url);
-                    gallerySlideshowContainer.innerHTML += `<img src="${json[i].source_url}">`;
+                    gallerySlideshowContainer.innerHTML += `<img src="${json[i].source_url}" class="auto-img">`;
                 };
             };
 
