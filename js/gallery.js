@@ -12,7 +12,6 @@ export function getGallery() {
 
             for(let i = 0; i < json.length; i++) {
 
-                console.log(json[i])
                 let counter = 0;
 
                 gallerySlideshowContainer.style.backgroundImage += `url("${json[2].source_url}")`;
@@ -29,7 +28,6 @@ export function getGallery() {
 
                         } else{
                         
-                        console.log(json[i].source_url)
                         gallerySlideshowContainer.style.backgroundImage = `url("${json[counter ++].source_url}")`;
                         console.log(counter)
                         }
@@ -39,17 +37,16 @@ export function getGallery() {
 
                     if(counter < 1){
                         console.log("im  too small")
-                        counter = 7;
+                        counter = json.length - 1;
                         console.log(counter)
 
                     } else{
                         gallerySlideshowContainer.style.backgroundImage = `url("${json[counter --].source_url}")`;
                         console.log(counter)
                     }
-                }    
-                    
+                }          
             };
-            
+
         } catch(error) {
 
             console.log(error);
