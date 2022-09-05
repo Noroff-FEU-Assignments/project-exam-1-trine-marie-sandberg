@@ -3,11 +3,11 @@
     min-height: 500px;
 }
 
-.slideshow-next-btn {
+.slideshow-next-btn, .slideshow-previous-btn {
     padding: 50px 20px;
     border: none;
     background-color: #EEF2EC;
-    opacity: 40%;
+    opacity: 50%;
 }
 
 .button-flex-wrap {
