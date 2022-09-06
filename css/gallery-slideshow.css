@@ -1,6 +1,6 @@
 .gallery-slideshow-container {
     background-size: cover;
-    min-height: 500px;
+    height: 700px;
 }
 
 .slideshow-next-btn, .slideshow-previous-btn {

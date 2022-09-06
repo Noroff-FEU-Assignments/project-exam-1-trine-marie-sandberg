@@ -21,8 +21,8 @@ export function getGallery() {
 
                 slideShowNextBtn.onclick = function nextImg() {
 
-                        if(counter >= json.length){
-                        console.log("im  too big")
+                        if(counter >= json.length) {
+                        //console.log("im  too big")
                         counter = 0;
                         console.log(counter)
 
@@ -30,21 +30,21 @@ export function getGallery() {
                         
                         gallerySlideshowContainer.style.backgroundImage = `url("${json[counter ++].source_url}")`;
                         console.log(counter)
-                        }
+                        };
                     };
 
                 slideShowPreveiousBtn.onclick = function preveiousImg() {
 
-                    if(counter < 1){
-                        console.log("im  too small")
+                    if(counter < 1) {
+                        //console.log("im  too small")
                         counter = json.length - 1;
                         console.log(counter)
 
                     } else{
                         gallerySlideshowContainer.style.backgroundImage = `url("${json[counter --].source_url}")`;
                         console.log(counter)
-                    }
-                }          
+                    };
+                };          
             };
 
         } catch(error) {
