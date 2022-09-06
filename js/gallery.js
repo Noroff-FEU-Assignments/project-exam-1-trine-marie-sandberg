@@ -10,17 +10,28 @@ export function getGallery() {
             const json = await response.json();
             console.log(json)
 
+            //LOOP IMAGES
             for(let i = 0; i < json.length; i++) {
 
-                let imgIndex = 0;
+                if(json[i].alt_text !== "gallery") {
+                    console.log("skipped!")
+                    continue;
+                     
+                } if(json[i].alt_text === "gallery") {
 
-                gallerySlideshowContainer.style.backgroundImage += `url("${json[2].source_url}")`;
+                    imgSlideshowDisplay()
+                }
+                    
+
+                function imgSlideshowDisplay() {
                 
-                const slideShowNextBtn = document.querySelector(".slideshow-next-btn");
-                const slideShowPreveiousBtn = document.querySelector(".slideshow-previous-btn");
+                    let imgIndex = 0;
+                    gallerySlideshowContainer.style.backgroundImage += `url("${json[2].source_url}")`;
+                    const slideShowNextBtn = document.querySelector(".slideshow-next-btn");
+                    const slideShowPreveiousBtn = document.querySelector(".slideshow-previous-btn");
 
-                slideShowNextBtn.onclick = function nextImg() {
-
+                    //NEXT BUTTON
+                    slideShowNextBtn.onclick = function nextImg() {
                         if(imgIndex >= json.length) {
                         //console.log("im  too big")
                         imgIndex = 0;
@@ -31,8 +42,9 @@ export function getGallery() {
                         gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex ++].source_url}")`;
                         };
                     };
-
-                slideShowPreveiousBtn.onclick = function preveiousImg() {
+                    
+                    //PREVIOUS BUTTON
+                    slideShowPreveiousBtn.onclick = function preveiousImg() {
 
                     if(imgIndex < 1) {
                         //console.log("im  too small")
@@ -40,9 +52,13 @@ export function getGallery() {
                         gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex --].source_url}")`;
 
                     } else{
+
                         gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex --].source_url}")`;
                     };
-                };          
+                };
+            };
+
+                   
             };
 
         } catch(error) {
