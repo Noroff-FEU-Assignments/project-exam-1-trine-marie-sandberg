@@ -12,7 +12,7 @@ export function getGallery() {
 
             for(let i = 0; i < json.length; i++) {
 
-                let counter = 0;
+                let imgIndex = 0;
 
                 gallerySlideshowContainer.style.backgroundImage += `url("${json[2].source_url}")`;
                 
@@ -21,28 +21,26 @@ export function getGallery() {
 
                 slideShowNextBtn.onclick = function nextImg() {
 
-                        if(counter >= json.length) {
+                        if(imgIndex >= json.length) {
                         //console.log("im  too big")
-                        counter = 0;
-                        console.log(counter)
+                        imgIndex = 0;
+                        gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex ++].source_url}")`;
 
                         } else{
                         
-                        gallerySlideshowContainer.style.backgroundImage = `url("${json[counter ++].source_url}")`;
-                        console.log(counter)
+                        gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex ++].source_url}")`;
                         };
                     };
 
                 slideShowPreveiousBtn.onclick = function preveiousImg() {
 
-                    if(counter < 1) {
+                    if(imgIndex < 1) {
                         //console.log("im  too small")
-                        counter = json.length - 1;
-                        console.log(counter)
+                        imgIndex = json.length - 1;
+                        gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex --].source_url}")`;
 
                     } else{
-                        gallerySlideshowContainer.style.backgroundImage = `url("${json[counter --].source_url}")`;
-                        console.log(counter)
+                        gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex --].source_url}")`;
                     };
                 };          
             };
