@@ -10,6 +10,7 @@
 
 .content-sidebar-s {
     background-color: #F9F9F9;
+    padding: 10px;
 }
 
 /* IMAGE AND POSTCARDS */
@@ -29,4 +30,10 @@
 .archive-photo {
     height: auto;
     width: 100%;
+}
+
+@media(min-width: 1500px) {
+    .content-sidebar-wrap {
+        grid-template-columns: 3fr 2fr;
+    }
 }
