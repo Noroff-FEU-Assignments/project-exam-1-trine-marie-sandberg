@@ -5,8 +5,8 @@ export function getGallery() {
     async function getImages() {
 
         try {
-            let imgIndex = 0;
-
+            
+            let imageName;
             const response = await fetch(galleryUrl);
             const json = await response.json();
             console.log(json);
@@ -14,7 +14,7 @@ export function getGallery() {
             //LOOP IMAGES
             for(let i = 0; i < json.length; i++) {
 
-                
+                imageName = json[i].title.rendered;
                 urlArray.push(json[i].source_url)
                 console.log(urlArray)
 
@@ -61,7 +61,8 @@ export function getGallery() {
             imgSlideshowDisplay()
             //CHECK IF IMAGE IS IN GALLERY
             //let imageName = `${json[i].title.rendered}`;
-            let checkUrl = ["localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-content/uploads/2022/09/", "gallery/", `${urlArray}`, ".jpg"];
+            //HOW TO CHECK THE ACTUAL URLS??
+            let checkUrl = ["localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-content/uploads/2022/09/", "gallery/", `${imageName}`, ".jpg"];
             
             console.log(checkUrl)
             let urlChecked = false;
