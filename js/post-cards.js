@@ -63,7 +63,7 @@ async function displayPosts() {
         postContainer.innerHTML += `<a href="${cardArray[i].postUrl}">
                                       <div class="post-card">
                                           <div class="author-wrap">
-                                             <image src="${authorCardObject.image}" class="profile-img">
+                                             <image src="/img/profile-img.png" class="profile-img">
                                              <p>${authorCardObject.name}</p>
                                           </div>
                                           <div>
