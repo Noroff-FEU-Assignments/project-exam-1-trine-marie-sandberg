@@ -5,6 +5,7 @@ export function getGallery() {
     async function getImages() {
 
         try {
+            let imgIndex = 0;
 
             const response = await fetch(galleryUrl);
             const json = await response.json();
@@ -13,20 +14,17 @@ export function getGallery() {
             //LOOP IMAGES
             for(let i = 0; i < json.length; i++) {
 
-                if(json[i].alt_text !== "gallery") {
-                    console.log("skipped!")
-                    continue;
-                     
-                } if(json[i].alt_text === "gallery") {
-
-                    imgSlideshowDisplay()
-                }
+                let imageUrl = "http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-content/uploads/2022/09/gallery/" + `${json[i].title.rendered}` + ".jpg";
+                console.log(imageUrl)
                     
+                imgSlideshowDisplay()
+                if(!gallerySlideshowContainer.style.backgroundImage) { continue }
 
                 function imgSlideshowDisplay() {
                 
-                    let imgIndex = 0;
-                    gallerySlideshowContainer.style.backgroundImage += `url("${json[2].source_url}")`;
+                    //let imgIndex = 0;
+                    //gallerySlideshowContainer.style.backgroundImage += `url("${json[2].source_url}")`;
+                    gallerySlideshowContainer.style.backgroundImage += `url("${imageUrl}")`;
                     const slideShowNextBtn = document.querySelector(".slideshow-next-btn");
                     const slideShowPreveiousBtn = document.querySelector(".slideshow-previous-btn");
 
@@ -35,11 +33,13 @@ export function getGallery() {
                         if(imgIndex >= json.length) {
                         //console.log("im  too big")
                         imgIndex = 0;
-                        gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex ++].source_url}")`;
+                        //gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex ++].source_url}")`;
+                        gallerySlideshowContainer.style.backgroundImage = `url("http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-content/uploads/2022/09/gallery/${json[imgIndex ++].title.rendered}.jpg")`;
 
                         } else{
                         
-                        gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex ++].source_url}")`;
+                        //gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex ++].source_url}")`;
+                        gallerySlideshowContainer.style.backgroundImage = `url("http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-content/uploads/2022/09/gallery/${json[imgIndex ++].title.rendered}.jpg")`;
                         };
                     };
                     
@@ -49,15 +49,16 @@ export function getGallery() {
                     if(imgIndex < 1) {
                         //console.log("im  too small")
                         imgIndex = json.length - 1;
-                        gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex --].source_url}")`;
+                        //gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex --].source_url}")`;
+                        gallerySlideshowContainer.style.backgroundImage = `url("http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-content/uploads/2022/09/gallery/${json[imgIndex --].title.rendered}.jpg")`;
 
                     } else{
 
-                        gallerySlideshowContainer.style.backgroundImage = `url("${json[imgIndex --].source_url}")`;
+                        gallerySlideshowContainer.style.backgroundImage = `url("http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-content/uploads/2022/09/gallery/${json[imgIndex --].title.rendered}.jpg")`;
                     };
                 };
             };
-
+//imgSlideshowDisplay()
                    
             };
 
