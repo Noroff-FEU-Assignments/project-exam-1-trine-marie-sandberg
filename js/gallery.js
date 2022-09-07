@@ -16,9 +16,9 @@ export function getGallery() {
 
                 let imageUrl = "http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-content/uploads/2022/09/gallery/" + `${json[i].title.rendered}` + ".jpg";
                 console.log(imageUrl)
-                    
+                    //if(!gallerySlideshowContainer.style.backgroundImage) { continue }
                 imgSlideshowDisplay()
-                if(!gallerySlideshowContainer.style.backgroundImage) { continue }
+                
 
                 function imgSlideshowDisplay() {
                 
@@ -57,6 +57,7 @@ export function getGallery() {
                         gallerySlideshowContainer.style.backgroundImage = `url("http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-content/uploads/2022/09/gallery/${json[imgIndex --].title.rendered}.jpg")`;
                     };
                 };
+                
             };
 //imgSlideshowDisplay()
                    
