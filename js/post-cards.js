@@ -61,12 +61,12 @@ async function displayPosts() {
     for(let i = 0; i < cardArray.length; i++) {
 
         postContainer.innerHTML += `<a href="${cardArray[i].postUrl}">
-                                      <div class="post-card">
+                                      <div class="post-card flex-wrap">
                                           <div class="author-wrap">
                                              <image src="/img/profile-img.png" class="profile-img">
                                              <p>${authorCardObject.name}</p>
                                           </div>
-                                          <div>
+                                          <div class="post-preview">
                                              <h3>${cardArray[i].title}</h3>
                                              <p>${cardArray[i].postPreview}</p>
                                           </div>

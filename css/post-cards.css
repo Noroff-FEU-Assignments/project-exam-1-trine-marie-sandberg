@@ -1,15 +1,19 @@
 .post-card {
-    display: flex;
-    background-color: rgb(236, 236, 236);
     margin: 15px;
     padding: 10px;
+    border-radius: 10px;
+    color: #4B4B4B;
+}
+
+.post-preview {
+    padding: 20px;
 }
 
 .author-wrap {
-    margin: 20px;
+    padding: 10px;
+    border-right: solid 1px #4B4B4B;
 }
 
-/* IMAGE AND POSTCARDS */
 .image-postcards-wrap {
     display: flex;
     flex-direction: column;
@@ -19,13 +23,10 @@
     background-image: linear-gradient(350deg, grey, blue, green);
 }
 
-.image-postcards-c {
-    background-color: grey;
-}
-
-.archive-photo {
-    height: auto;
-    width: 100%;
+.post-card-container {
+    background-color: #F9F9F9;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .profile-img {
