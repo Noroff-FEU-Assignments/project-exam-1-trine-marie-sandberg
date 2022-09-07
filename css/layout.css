@@ -13,23 +13,10 @@
     padding: 10px;
 }
 
-/* IMAGE AND POSTCARDS */
-.image-postcards-wrap {
+/* DISPLAY FLEX */
+.flex-wrap {
     display: flex;
-    flex-direction: column;
-}
-
-.image-postcards-i {
-    background-image: linear-gradient(350deg, grey, blue, green);
-}
-
-.image-postcards-c {
-    background-color: grey;
-}
-
-.archive-photo {
-    height: auto;
-    width: 100%;
+    align-items: center;
 }
 
 @media(min-width: 1500px) {
