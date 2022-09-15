@@ -1,7 +1,7 @@
 //MAKE API CALL TO ...WP/V2/POSTS AND CREATE HTML FOR DISPLAYING POST CARDS
 export function getPostCards() {
 
-const postUrl = "http://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts";
+const postUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts";
 const postContainer = document.querySelector(".post-card-container");
 postContainer.innerHTML = "Loading . . .";
 

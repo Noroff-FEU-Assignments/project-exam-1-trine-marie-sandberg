@@ -1,5 +1,5 @@
 export function getGallery() {
-    const galleryUrl = "http://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/media";
+    const galleryUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/media";
     const gallerySlideshowContainer = document.querySelector(".gallery-slideshow-container");
 
     async function getImages() {

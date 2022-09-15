@@ -10,8 +10,8 @@ export function addComment() {
                 "content": {"rendered": document.querySelector(".quick-post-content").value},
             }
 
-            let createComment = new XMLHttpRequest();
-            createComment.open("POST", "http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-json/wp/v2/comments");
+            let createComment = new XMLHttpsRequest();
+            createComment.open("POST", "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/comments");
             createComment.setRequestHeader("content-type", "application/json;charset=UTF-8");
             //createComment.setRequestHeader("X-WP-Nonce", userData.nonce)
             createComment.send(JSON.stringify(quickPostData));
@@ -19,7 +19,7 @@ export function addComment() {
 
         async function displayComments() {
             try {
-                let getComment = await fetch("http://localhost/mhpb-blogg-content/wordpress-6.0.2/wordpress/wp-json/wp/v2/comments");
+                let getComment = await fetch("https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/comments");
                 let comments = await getComment.json();
 
                 for(let i = 0; i < comments.length; i++) {
