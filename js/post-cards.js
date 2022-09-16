@@ -77,7 +77,7 @@ async function displayPosts() {
 
     postContainer.innerHTML = `<div>Sorry, we could not load content. Please try to refresh the page or try again later.</div>
                                <button>Refresh</button>
-                               <div>Type of error: ${error}</div>`
+                               <div>Type of error: ${error}</div>`;
     
     console.log(error);
   };

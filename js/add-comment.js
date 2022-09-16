@@ -3,19 +3,20 @@ export function addComment() {
     const commentsContainer = document.querySelector(".comments-container");
 
     if (addCommentBtn) {
+
         addCommentBtn.addEventListener("click", function(event) {
             event.preventDefault();
             let quickPostData = {
                 "author_name": document.querySelector(".quick-post-title").value, 
                 "content": {"rendered": document.querySelector(".quick-post-content").value},
-            }
+            };
 
-            let createComment = new XMLHttpsRequest();
+            let createComment = new XMLHttpRequest();
             createComment.open("POST", "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/comments");
             createComment.setRequestHeader("content-type", "application/json;charset=UTF-8");
             //createComment.setRequestHeader("X-WP-Nonce", userData.nonce)
             createComment.send(JSON.stringify(quickPostData));
-        })
+        });
 
         async function displayComments() {
             try {
@@ -29,8 +30,9 @@ export function addComment() {
             } catch(error) {
                 console.log(error)
             }
-        }
-        displayComments()
+        };
+
+        displayComments();
          
-    }
-}
+    };
+};
