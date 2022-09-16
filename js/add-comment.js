@@ -8,7 +8,9 @@ export function addComment() {
         addCommentBtn.addEventListener("click", function(event) {
 
             event.preventDefault();
+
             let quickPostData = {
+                
                 "author_name": document.querySelector(".quick-post-title").value, 
                 "content": {"rendered": document.querySelector(".quick-post-content").value},
             };
@@ -23,7 +25,7 @@ export function addComment() {
         async function displayComments() {
 
             try {
-                
+
                 let getComment = await fetch("https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/comments");
                 let comments = await getComment.json();
 
