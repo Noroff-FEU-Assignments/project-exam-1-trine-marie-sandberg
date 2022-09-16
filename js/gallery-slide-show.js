@@ -36,9 +36,28 @@ export function gallerySlideShow() {
                     
                     let imgIndex = 0;
 
+                    function autoSlideshow() {
+                            //gallerySlideshowContainer.style.backgroundImage = none;
+                           
+                                imgIndex ++;
+                                gallerySlideshowContainer.style.backgroundImage = `url("${urlArray[imgIndex]}")`;
+
+                             if(imgIndex > urlArray.length - 1 ) {
+                                imgIndex = 0;
+                                console.log("to big: " + imgIndex)
+                                gallerySlideshowContainer.style.backgroundImage = `url("${urlArray[imgIndex]}")`;
+                            }
+
+                            
+                        
+                    };
+
+                    let myTimer = setInterval(autoSlideshow, 5000);
+                    //autoSlideshow()
                     //NEXT btn
                     slideShowNextBtn.onclick = function nextImg() {
 
+                        clearInterval(myTimer);
                         imgIndex ++;
 
                         if(imgIndex > urlArray.length - 1) {
@@ -51,6 +70,8 @@ export function gallerySlideShow() {
                     
                     //PREVIOUS btn
                     slideShowPreveiousBtn.onclick = function preveiousImg() {
+
+                        clearInterval(myTimer);
                         
                         if(imgIndex < 1) {
                             
