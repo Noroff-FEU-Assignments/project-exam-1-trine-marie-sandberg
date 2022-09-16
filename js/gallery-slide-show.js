@@ -39,7 +39,7 @@ export function gallerySlideShow() {
                     function autoSlideshow() {
                            
                                 imgIndex ++;
-                                gallerySlideshowContainer.style.transition="1s ease-in";
+                                gallerySlideshowContainer.style.transition="1s ease";
                                 gallerySlideshowContainer.style.backgroundImage = `url("${urlArray[imgIndex]}")`;
 
                              if(imgIndex > urlArray.length - 1 ) {
