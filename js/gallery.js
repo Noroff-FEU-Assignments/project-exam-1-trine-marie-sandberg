@@ -60,8 +60,11 @@ export function getGallery() {
                     //PREVIOUS BUTTON
                     slideShowPreveiousBtn.onclick = function preveiousImg() {
                         
+                        //gallerySlideshowContainer.style.backgroundImage += `url("${urlArray[urlArray.length - 1]}")`;
+                        
                         if(imgIndex < 1) {
-                            imgIndex = urlArray.length;
+                            
+                            imgIndex = urlArray.length - 1;
                             console.log("LENGTH: " + urlArray.length)
                         };
                         
