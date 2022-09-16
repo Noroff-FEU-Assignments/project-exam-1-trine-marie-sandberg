@@ -39,6 +39,7 @@ export function gallerySlideShow() {
                     function autoSlideshow() {
                            
                                 imgIndex ++;
+                                gallerySlideshowContainer.style.transition="2s ease-in";
                                 gallerySlideshowContainer.style.backgroundImage = `url("${urlArray[imgIndex]}")`;
 
                              if(imgIndex > urlArray.length - 1 ) {
@@ -48,7 +49,7 @@ export function gallerySlideShow() {
                             };
                     };
 
-                    let myTimer = setInterval(autoSlideshow, 8000);
+                    let myTimer = setInterval(autoSlideshow, 7000);
 
                     //NEXT btn
                     slideShowNextBtn.onclick = function nextImg() {

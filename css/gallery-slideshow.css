@@ -1,28 +1,7 @@
 .gallery-slideshow-container {
     background-size: cover;
     height: 700px;
-    /* animation-name: backgroundImage;
-    animation-duration: 6s;
-    animation-iteration-count: revert; */
 }
-
-/* @keyframes backgroundImage {
-    0% {
-        opacity: 30%;
-    }
-    25% {
-        opacity: 50%;
-    }
-    50% {
-        opacity: 100%;
-    }
-    75% {
-        opacity: 100%;
-    }
-    100% {
-        opacity: 100%;
-    }
-} */
 
 .slideshow-next-btn, .slideshow-previous-btn {
     padding: 50px 20px;
