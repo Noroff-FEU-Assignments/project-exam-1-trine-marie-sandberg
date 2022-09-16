@@ -37,23 +37,19 @@ export function gallerySlideShow() {
                     let imgIndex = 0;
 
                     function autoSlideshow() {
-                            //gallerySlideshowContainer.style.backgroundImage = none;
                            
                                 imgIndex ++;
                                 gallerySlideshowContainer.style.backgroundImage = `url("${urlArray[imgIndex]}")`;
 
                              if(imgIndex > urlArray.length - 1 ) {
-                                imgIndex = 0;
-                                console.log("to big: " + imgIndex)
-                                gallerySlideshowContainer.style.backgroundImage = `url("${urlArray[imgIndex]}")`;
-                            }
 
-                            
-                        
+                                imgIndex = 0;
+                                gallerySlideshowContainer.style.backgroundImage = `url("${urlArray[imgIndex]}")`;
+                            };
                     };
 
-                    let myTimer = setInterval(autoSlideshow, 5000);
-                    //autoSlideshow()
+                    let myTimer = setInterval(autoSlideshow, 8000);
+
                     //NEXT btn
                     slideShowNextBtn.onclick = function nextImg() {
 
