@@ -48,3 +48,10 @@
     display: flex;
     align-items: center;
 }
+
+@media(max-width: 1000px) {
+    .nav-search-wrap {
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+}
