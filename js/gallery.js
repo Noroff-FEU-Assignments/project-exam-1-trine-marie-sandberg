@@ -19,20 +19,21 @@ export function getGallery() {
                 console.log(urlArray)
 
 //imgSlideshowDisplay()
-                   
             };
+            
+            gallerySlideshowContainer.style.backgroundImage = `url("https://gamehub-wp-api.one/mhpb-blogg-content/wp-content/uploads/2022/09/gallery/stone-road.jpg")`;
 
             for(let imgIndex = 0; imgIndex < urlArray.length; imgIndex++) {
 
                 function imgSlideshowDisplay() {
                 
-                    //let imgIndex = 0;
                     gallerySlideshowContainer.style.backgroundImage += `url("${urlArray[imgIndex]}")`;
                     const slideShowNextBtn = document.querySelector(".slideshow-next-btn");
                     const slideShowPreveiousBtn = document.querySelector(".slideshow-previous-btn");
 
                     //NEXT BUTTON
                     slideShowNextBtn.onclick = function nextImg() {
+                        gallerySlideshowContainer.style.backgroundImage += `url("")`;
                         if(imgIndex >= json.length) {
                         //console.log("im  too big")
                         imgIndex = 0;
@@ -46,6 +47,7 @@ export function getGallery() {
                     
                     //PREVIOUS BUTTON
                     slideShowPreveiousBtn.onclick = function preveiousImg() {
+                        gallerySlideshowContainer.style.backgroundImage += `url("")`;
 
                     if(imgIndex < 1) {
                         //console.log("im  too small")
