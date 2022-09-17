@@ -28,7 +28,8 @@ async function getPosts() {
         //STORE POSTDETAILS
         postCardObject = { postUrl: json[i].guid.rendered,
                            title: json[i].title.rendered,
-                           postPreview: json[i].excerpt.rendered
+                           postPreview: json[i].excerpt.rendered,
+                           postId: json[i].id
                          };
 
         cardArray.push(postCardObject);
@@ -60,7 +61,7 @@ async function displayPosts() {
 
     for(let i = 0; i < cardArray.length; i++) {
 
-        postContainer.innerHTML += `<a href="${cardArray[i].postUrl}">
+        postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[i].postId}">
                                       <div class="post-card flex-wrap">
                                           <div class="author-wrap">
                                              <image src="/img/profile-img.png" class="profile-img">
