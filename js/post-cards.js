@@ -16,15 +16,10 @@ async function getPosts() {
 
     const response = await fetch(postUrl);
     const json = await response.json();
-
-    let singlePostUrl;
     postContainer.innerHTML = "";
 
     for(let i = 0; i < json.length; i++) {
-
-        //STORE URL FOR EACH POST
-        singlePostUrl = json[i].guid.rendered;
-
+console.log(json[i])
         //STORE POSTDETAILS
         postCardObject = { postUrl: json[i].guid.rendered,
                            title: json[i].title.rendered,

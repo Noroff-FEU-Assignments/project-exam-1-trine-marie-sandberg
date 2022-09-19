@@ -8,17 +8,29 @@ let singlePostUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2
 
 async function getSinglePost() {
 
-    
-    const getPost = await fetch(singlePostUrl);
-    const postJson = await getPost.json();
-    console.log(postJson)
+    try {
 
-    singlePostContainer.innerHTML = `<div class="single-post-content">
+        const getPost = await fetch(singlePostUrl);
+        const postJson = await getPost.json();
+        console.log(postJson)
+        singlePostContainer.innerHTML = `<div class="single-post-content">
                                      <h2>${postJson.title.rendered}</h2>
                                      <p>${postJson.date}</p>
                                      <p>${postJson.title.rendered}</p>
-                                     <img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}">
+                                     
                                      </div>`;
+
+        if(!postJson._embedded['wp:featuredmedia'][0].source_url) {};
+        if(postJson._embedded['wp:featuredmedia'][0].source_url) {
+            singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}">`
+        };
+
+    } catch(error) {
+        console.log(error)
+    }
+    
+
+    
 
     // for(let i = 0; i < postJson.length; i++) {
     //     console.log(singlePostUrl)
