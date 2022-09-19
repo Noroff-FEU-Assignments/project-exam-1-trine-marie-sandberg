@@ -51,6 +51,25 @@
     align-items: center;
 }
 
+/*FOOTER*/
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F9F9F9;
+    padding: 5px;
+}
+
+.small-text {
+    font-size: 13px;
+    margin: 0;
+}
+
+.footer-text {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/*MEDIA QUERIES*/
 @media(max-width: 1000px) {
     .nav-search-wrap {
         flex-direction: column;
