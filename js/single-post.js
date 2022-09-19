@@ -15,6 +15,9 @@ async function getSinglePost() {
 
     singlePostContainer.innerHTML = `<div class="single-post-content">
                                      <h2>${postJson.title.rendered}</h2>
+                                     <p>${postJson.date}</p>
+                                     <p>${postJson.title.rendered}</p>
+                                     <img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}">
                                      </div>`;
 
     // for(let i = 0; i < postJson.length; i++) {
