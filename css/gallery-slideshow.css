@@ -11,6 +11,10 @@
     cursor: pointer;
 }
 
+.gallery-slideshow-bg {
+    background-color: skyblue;
+}
+
 .button-flex-wrap {
     padding-top: 250px;
     display: flex;

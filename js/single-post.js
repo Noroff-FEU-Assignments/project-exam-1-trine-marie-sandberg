@@ -22,7 +22,7 @@ async function getSinglePost() {
 
         if(!postJson._embedded['wp:featuredmedia'][0].source_url) {};
         if(postJson._embedded['wp:featuredmedia'][0].source_url) {
-            singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}">`
+            singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}" class="auto-img">`;
         };
 
     } catch(error) {
