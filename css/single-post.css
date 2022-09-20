@@ -33,6 +33,7 @@
 }
 
 .single-post-content-container :is(figure) {
-    margin: 0 50px 50px 0;
-    background-color: #944040 !important;
+    margin: 0;
+    padding: 0 50px 50px 0;
+    background-color: #F9F9F9;
 }
