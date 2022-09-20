@@ -26,10 +26,9 @@ async function getSinglePost() {
         try {
             singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}" class="auto-img">`;
         } catch(error) {
-            console.log(error);
             singlePostContainer.innerHTML += `<div class="featured-img-placeholder">
                                                  <img src="/img/missing-img.jpg" class="auto-img" alt="abstract image of shattered pieces in soft pastell colours">
-                                                 <h2 class="featured-img-placeholder-text header-special">No image</h2>
+                                                 <h2 class="featured-img-placeholder-text header-special">missing image</h2>
                                               </div>`;
         };
 
@@ -43,7 +42,15 @@ async function getSinglePost() {
                                           <p>Reading time</p>
                                           <p>${postJson.excerpt.rendered}</p>`;
 
-        postContentContainer.innerHTML = `${postJson.guid.rendered}`
+        postContentContainer.innerHTML = `${postJson.content.rendered}`;
+
+        const removeEmojis = document.querySelector(".booster-reactions-block");
+        removeEmojis.style.display ="none";
+        const adjustImages = document.querySelector(`.wp-image-${postJson.featured_media}`);
+        console.log(adjustImages)
+
+        const targetImgContainer = document.querySelector(".wp-block-image");
+        //targetImgContainer.style.gridArea = "b"
 
     } catch(error) {
         console.log(error)
