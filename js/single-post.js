@@ -50,7 +50,9 @@ async function getSinglePost() {
         console.log(adjustImages)
 
         const targetImgContainer = document.querySelector(".wp-block-image");
-        //targetImgContainer.style.gridArea = "b"
+        //targetImgContainer.style.margin = "50px 50px 0 0";
+        targetImgContainer.style.display = "flex";
+        //targetImgContainer.style.backgroundColor = "#F9F9F9";
 
     } catch(error) {
         console.log(error)
