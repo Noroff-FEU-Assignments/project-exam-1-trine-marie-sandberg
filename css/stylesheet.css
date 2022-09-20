@@ -4,6 +4,10 @@
 @import url(/css/gallery-slideshow.css);
 @import url(/css/single-post.css);
 
+@font-face {
+    font-family: 'Perpetua Titling MT';
+    src: url('/font/PerpetuaTitlingMTLight2.woff');
+}
 body {
     margin: 0 40px;
 }
@@ -28,8 +32,7 @@ p {
 }
 
 .header-special {
-    font-family: aviano-flare, sans-serif;
-    font-weight: 300;
+    font-family: 'Perpetua Titling MT', sans-serif;
 }
 
 a {
