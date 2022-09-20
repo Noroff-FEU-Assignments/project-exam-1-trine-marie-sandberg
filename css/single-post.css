@@ -10,11 +10,12 @@
 
 .featured-img-placeholder {
     position: relative;
+    border: 1px solid #769f97;
 }
 
 .featured-img-placeholder-text {
     position: absolute;
-    font-size: 4rem;
+    font-size: 5vw;
     top: 30%;
     left: 25%;
 }
