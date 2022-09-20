@@ -2,6 +2,7 @@
 @import url(/css/post-cards.css);
 @import url(/css/layout.css);
 @import url(/css/gallery-slideshow.css);
+@import url(/css/single-post.css);
 
 body {
     margin: 0 40px;
