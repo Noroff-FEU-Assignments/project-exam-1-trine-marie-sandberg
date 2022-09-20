@@ -27,7 +27,10 @@ async function getSinglePost() {
             singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}" class="auto-img">`;
         } catch(error) {
             console.log(error);
-            singlePostContainer.innerHTML += `<img>`;
+            singlePostContainer.innerHTML += `<div class="featured-img-placeholder">
+                                                 <img src="/img/missing-img.jpg" class="auto-img" alt="abstract image of shattered pieces in soft pastell colours">
+                                                 <h2 class="featured-img-placeholder-text header-special">No featured image to show</h2>
+                                              </div>`;
         };
 
         aboutAuthorContainer.innerHTML = `<div class="flex-wrap">

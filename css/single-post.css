@@ -7,3 +7,13 @@
     font-size: 0.7rem;
     text-align: center;
 }
+
+.featured-img-placeholder {
+    position: relative;
+}
+
+.featured-img-placeholder-text {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+}
