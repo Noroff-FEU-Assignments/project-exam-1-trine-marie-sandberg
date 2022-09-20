@@ -29,7 +29,7 @@ async function getSinglePost() {
             console.log(error);
             singlePostContainer.innerHTML += `<div class="featured-img-placeholder">
                                                  <img src="/img/missing-img.jpg" class="auto-img" alt="abstract image of shattered pieces in soft pastell colours">
-                                                 <h2 class="featured-img-placeholder-text header-special">No featured image to show</h2>
+                                                 <h2 class="featured-img-placeholder-text header-special">No image</h2>
                                               </div>`;
         };
 
