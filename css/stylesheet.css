@@ -59,3 +59,9 @@ li {
 .underline {
     border-bottom: #4B4B4B solid 1px;
 }
+
+@media(max-width: 700px) {
+    body {
+        margin: 0;
+    }
+}

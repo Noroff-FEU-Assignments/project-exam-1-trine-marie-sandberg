@@ -30,10 +30,30 @@
     margin: 0;
     height: auto;
     width: 100%;
+    max-width: 1000px;
 }
 
 .single-post-content-container :is(figure) {
+    display: flex;
     margin: 0;
-    padding: 0 50px 50px 0;
     background-color: #F9F9F9;
+    border: solid 1px #e7e7e7;
+    border-radius: 5px;
+}
+
+.single-post-content-container :is(figcaption) {
+    font-family: auto-pro-new, sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: 20px;
+    color: #373737;
+    overflow-wrap: break-word;
+    min-width: 400px;
+    align-self: center;
+}
+
+@media(max-width: 1600px) {
+    .single-post-content-container :is(figure) {
+        flex-wrap: wrap;
+    }
 }
