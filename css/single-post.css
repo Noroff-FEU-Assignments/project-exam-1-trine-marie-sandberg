@@ -56,6 +56,7 @@
 .wp-block-cover :is(h2) {
     display: flex;
     font-family: 'Perpetua Titling MT', sans-serif;
+    margin: 5rem;
 }
 
 @media(max-width: 1600px) {
