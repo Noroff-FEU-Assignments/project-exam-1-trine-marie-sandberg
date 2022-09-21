@@ -17,14 +17,10 @@ async function getSinglePost() {
         const getPost = await fetch(singlePostUrl);
         const postJson = await getPost.json();
         console.log(postJson)
-        singlePostContainer.innerHTML = `<div class="single-post-content flex-wrap">
-                                     <h2>${postJson.title.rendered}</h2>
-                                     <p>${postJson.date}</p>
-                                     </div>`;
 
-        //if(!postJson._embedded['wp:featuredmedia'][0].source_url) {};
         try {
-            singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}" class="auto-img">`;
+            singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}" class="auto-img">
+                                              `;
         } catch(error) {
             singlePostContainer.innerHTML += `<div class="featured-img-placeholder">
                                                  <img src="/img/missing-img.jpg" class="auto-img" alt="abstract image of shattered pieces in soft pastell colours">
@@ -33,16 +29,16 @@ async function getSinglePost() {
         };
 
         aboutAuthorContainer.innerHTML = `<div class="flex-wrap">
-                                             <h2>Description</h2>
+                                             <p>${postJson.date}</p>
                                              <div class="author-name-img-wrap">
                                                  <image src="/img/profile-img.png" class="profile-img">
                                                  <h2>${postJson._embedded.author[0].name}</h2>
                                              </div>
                                           </div>
-                                          <p>Reading time</p>
                                           <p>${postJson.excerpt.rendered}</p>`;
 
-        postContentContainer.innerHTML = `${postJson.content.rendered}`;
+        postContentContainer.innerHTML = `<h1>${postJson.title.rendered}</h1>
+                                          <div>${postJson.content.rendered}</div>`;
 
         const removeEmojis = document.querySelector(".booster-reactions-block");
         removeEmojis.style.display ="none";
@@ -53,6 +49,8 @@ async function getSinglePost() {
         //targetImgContainer.style.margin = "50px 50px 0 0";
         targetImgContainer.style.display = "flex";
         //targetImgContainer.style.backgroundColor = "#F9F9F9";
+
+        const targetReadtime = document.querySelector(".twp-read-time");
 
     } catch(error) {
         console.log(error)

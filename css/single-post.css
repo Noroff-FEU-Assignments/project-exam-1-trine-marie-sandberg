@@ -1,6 +1,11 @@
-.single-post-container {
-    padding: 10px;
+.single-post-container :is(p) {
+    background-color: skyblue;
+    margin: 0;
 }
+
+/* .single-post-container :is(h1) {
+    margin: 0;
+} */
 
 .author-name-img-wrap {
     padding: 15px;
@@ -50,6 +55,11 @@
     overflow-wrap: break-word;
     min-width: 400px;
     align-self: center;
+}
+
+.twp-read-time {
+    margin-top: 10px;
+    padding: 5px;
 }
 
 @media(max-width: 1600px) {
