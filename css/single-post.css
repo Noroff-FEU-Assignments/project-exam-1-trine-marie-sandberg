@@ -1,12 +1,3 @@
-.single-post-container :is(p) {
-    background-color: skyblue;
-    margin: 0;
-}
-
-/* .single-post-container :is(h1) {
-    margin: 0;
-} */
-
 .author-name-img-wrap {
     padding: 15px;
     font-size: 0.7rem;
@@ -24,10 +15,6 @@
     font-size: 4vw;
     top: 30%;
     left: 20%;
-}
-
-.single-post-content-container :is(h2) {
-    background-color: skyblue;
 }
 
 .single-post-content-container :is(img) {
