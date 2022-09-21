@@ -17,6 +17,7 @@ export function gallerySlideShow() {
             for(let i = 0; i < json.length; i++) {
                 
                 let singleImgUrl = json[i].source_url;
+                console.log(singleImgUrl)
 
                 function searchForGallery(url) {
                     const regExUrl = /gallery/;
