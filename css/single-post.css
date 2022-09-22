@@ -74,6 +74,7 @@
 .image-modal-container {
     display: hidden;
     position: absolute;
+    margin: 0 auto;
 }
 
 .modal-img {
@@ -82,16 +83,21 @@
 }
 
 .cansel-x {
-    color: red;
-    background-color: #e7e7e7;
-    border: 1px solid red;
-    border-radius: 50%;
+    color: #928d8d;
+    background-color: #ffff;
+    border: 1px solid #928d8d;
+    border-radius: 5px;
     padding: 10px;
-    font-size: 1rem;
+    font-size: 2rem;
     height: fit-content;
     position: absolute;
     right: 0;
     cursor: pointer;
+}
+
+.cansel-x:hover {
+    border: 1px solid #373737;
+    color: #373737;
 }
 
 @media(max-width: 1600px) {
