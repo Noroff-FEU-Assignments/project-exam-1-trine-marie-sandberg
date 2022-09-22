@@ -1,6 +1,6 @@
 export function imageModal() {
 
-    const targetPostImages = document.querySelectorAll("figure > img");
+    const targetPostImages = document.querySelectorAll("figure > img, .wp-block-cover > img");
     const imgModalContainer = document.querySelector(".image-modal-container");
 
     targetPostImages.forEach( img => 
