@@ -27,8 +27,6 @@ export function imageModal() {
                 function closeModal() {
                     
                     imgModalContainer.style.display = "none";
-
-                    
                 };
 
                 canselX.addEventListener("click", closeModal);
