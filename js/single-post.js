@@ -1,3 +1,6 @@
+import { imageModal } from "/js/img-modal.js";
+
+
 const queryString = document.location.search;
 const param = new URLSearchParams(queryString);
 const id = param.get("id");
@@ -17,7 +20,7 @@ async function getSinglePost() {
         console.log(postJson)
 
         try {
-            singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}" class="auto-img">
+            singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}" class="featured-img">
                                               `;
         } catch(error) {
             singlePostContainer.innerHTML += `<div class="featured-img-placeholder">
@@ -37,6 +40,9 @@ async function getSinglePost() {
 
         postContentContainer.innerHTML = `<h1>${postJson.title.rendered}</h1>
                                           <div>${postJson.content.rendered}</div>`;
+
+                                          //IMPORTING MODAL FOR BIGGER IMG
+                                          imageModal();
 
         const removeEmojis = document.querySelector(".booster-reactions-block");
         removeEmojis.style.display ="none";
