@@ -1,3 +1,4 @@
+//Creates comment data from form and sends it to https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/comments
 export function addComment() {
 
     const addCommentBtn = document.querySelector(".add-comment-btn");
@@ -13,22 +14,19 @@ export function addComment() {
             const param = new URLSearchParams(queryString);
             const id = param.get("id");
 
-            let commentContent = document.querySelector(".quick-post-content").value;
-            console.log(commentContent)
-
-            let quickCommentData = {
-                
-                "author_name": document.querySelector(".quick-post-title").value,
+            //COMMENT DATA
+            let commentData = {
+                "author_name": document.querySelector(".comment-author").value,
                 "author_email": document.querySelector(".comment-email").value, 
-                "content": document.querySelector(".quick-post-content").value,
+                "content": document.querySelector(".comment-content").value,
                 "post": `${id}`,
             };
 
             let createComment = new XMLHttpRequest();
             createComment.open("POST", "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/comments");
             createComment.setRequestHeader("content-type", "application/json;charset=UTF-8");
-            createComment.send(JSON.stringify(quickCommentData));
-            console.log(quickCommentData)
+            createComment.send(JSON.stringify(commentData));
+            console.log(commentData)
 
             //ERROR HANDLING
             createComment.onreadystatechange = function() {
@@ -41,6 +39,7 @@ export function addComment() {
             };
         });
 
+        //DISPLAY COMMENTS
         async function displayComments() {
 
             try {
