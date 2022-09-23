@@ -56,12 +56,9 @@
     display: flex;
     justify-content: space-between;
     background-color: #F9F9F9;
+    border: solid 1px #e7e7e7;
+    border-radius: 5px;
     padding: 5px;
-}
-
-.small-text {
-    font-size: 13px;
-    margin: 0;
 }
 
 .footer-text {
