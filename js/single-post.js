@@ -1,4 +1,6 @@
 import { imageModal } from "/js/img-modal.js";
+import { addComment } from "/js/add-comment.js";
+addComment();
 
 
 const queryString = document.location.search;
