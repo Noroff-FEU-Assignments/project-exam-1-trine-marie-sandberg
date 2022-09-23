@@ -1,6 +1,6 @@
 import { imageModal } from "/js/img-modal.js";
 import { addComment } from "/js/add-comment.js";
-addComment();
+
 
 
 const queryString = document.location.search;
@@ -12,14 +12,13 @@ const aboutAuthorContainer = document.querySelector(".about-author");
 const postContentContainer = document.querySelector(".single-post-content-container");
 
 let singlePostUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts/" + id + "?_embed";
-
+addComment();
 async function getSinglePost() {
 
     try {
 
         const getPost = await fetch(singlePostUrl);
         const postJson = await getPost.json();
-        console.log(postJson)
 
         try {
             singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}" class="featured-img">

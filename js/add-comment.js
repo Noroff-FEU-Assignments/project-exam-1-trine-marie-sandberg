@@ -9,17 +9,36 @@ export function addComment() {
 
             event.preventDefault();
 
-            let quickPostData = {
+            const queryString = document.location.search;
+            const param = new URLSearchParams(queryString);
+            const id = param.get("id");
+
+            let commentContent = document.querySelector(".quick-post-content").value;
+            console.log(commentContent)
+
+            let quickCommentData = {
                 
-                "author_name": document.querySelector(".quick-post-title").value, 
-                "content": {"rendered": document.querySelector(".quick-post-content").value},
+                "author_name": document.querySelector(".quick-post-title").value,
+                "author_email": document.querySelector(".comment-email").value, 
+                "content": document.querySelector(".quick-post-content").value,
+                "post": `${id}`,
             };
 
             let createComment = new XMLHttpRequest();
             createComment.open("POST", "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/comments");
             createComment.setRequestHeader("content-type", "application/json;charset=UTF-8");
-            //createComment.setRequestHeader("X-WP-Nonce", userData.nonce)
-            createComment.send(JSON.stringify(quickPostData));
+            createComment.send(JSON.stringify(quickCommentData));
+            console.log(quickCommentData)
+
+            //ERROR HANDLING
+            createComment.onreadystatechange = function() {
+
+                if (createComment.readyState == 4) {
+                    if(createComment.status == 201) {
+                        alert("success!");
+                    } else {alert("Error, please try again")}
+                };
+            };
         });
 
         async function displayComments() {
