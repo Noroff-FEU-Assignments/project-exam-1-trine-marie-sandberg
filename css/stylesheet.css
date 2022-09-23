@@ -10,7 +10,7 @@
     src: url('/font/PerpetuaTitlingMTLight2.woff');
 }
 body {
-    margin: 0 40px;
+    margin: 0 15vw;
 }
 
 h1 {

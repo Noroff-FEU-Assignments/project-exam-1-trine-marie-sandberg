@@ -12,9 +12,16 @@ export async function displayComments() {
         
         for(let i = 0; i < comments.length; i++) {
             console.log(comments[i])
+            console.log(comments[i].content)
 
             if(comments[i].post == postId) {
-                commentsContainer.innerHTML += `<p>${comments[i].content.rendered}</p>`;
+                commentsContainer.innerHTML += `<div class="comment-section-content">
+                                                   <div class="flex-wrap">
+                                                      <p>${comments[i].author_name}</p>
+                                                      <p>${comments[i].date}</p>
+                                                   </div>
+                                                   <p>${comments[i].content.rendered}</p>
+                                                </div>`;
             };
             
         };

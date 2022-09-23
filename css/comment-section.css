@@ -6,8 +6,9 @@
     margin-bottom: 1rem;
 }
 
-.comments-container :is(p) {
+.comment-section-content {
     background-color: #F9F9F9;
     border: solid 1px #e7e7e7;
     border-radius: 5px;
+    margin: 10px 0;
 }
