@@ -1,0 +1,13 @@
+.comments-container {
+    font-family: auto-pro-new, sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #373737;
+    margin-bottom: 1rem;
+}
+
+.comments-container :is(p) {
+    background-color: #F9F9F9;
+    border: solid 1px #e7e7e7;
+    border-radius: 5px;
+}

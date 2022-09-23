@@ -1,5 +1,6 @@
 import { imageModal } from "/js/img-modal.js";
 import { addComment } from "/js/add-comment.js";
+import { displayComments } from "/js/display-comments.js";
 
 
 
@@ -13,6 +14,8 @@ const postContentContainer = document.querySelector(".single-post-content-contai
 
 let singlePostUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts/" + id + "?_embed";
 addComment();
+
+
 async function getSinglePost() {
 
     try {
@@ -56,3 +59,5 @@ async function getSinglePost() {
 };
 
 getSinglePost();
+
+displayComments();
