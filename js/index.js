@@ -44,8 +44,9 @@ function displayPosts() {
 
     try {
         
-        let index = [0, 1, 2, 3];
-
+        let index = [[0, 1, 2, 3], [4, 5, 6, 7], [8]];
+        let indexIndex = 0;
+console.log(index)
         function postCardButtons() {
             const btn1 = document.querySelector(".round-btn1");
             const btn2 = document.querySelector(".round-btn2");
@@ -53,18 +54,20 @@ function displayPosts() {
             const roundNextBtn = document.querySelector(".round-next-btn");
 
             roundNextBtn.onclick = function() {
-                index = [4, 5, 6, 7];
+
+                indexIndex ++
+                
                 postContainer.innerHTML = ""
                 for(let i = 0; i < index.length; i++) {
 
-                    postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[index[i]].postId}">
+                    postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[index[indexIndex][i]].postId}">
                                                     <div class="post-card">
-                                                      <img src="${cardArray[index[i]].imgUrl}" class="card-img">
-                                                      <h3>${cardArray[index[i]].title}</h3>
+                                                      <img src="${cardArray[index[indexIndex][i]].imgUrl}" class="card-img">
+                                                      <h3>${cardArray[index[indexIndex][i]].title}</h3>
                                                     </div>
-                                                </a>`; 
+                                                </a>`;
             };
-            index = [8, 9, 10, 11];
+            
             
             }
         };
@@ -74,10 +77,10 @@ function displayPosts() {
         
     for(let i = 0; i < index.length; i++) {
 
-        postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[index[i]].postId}">
+        postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[index[indexIndex][i]].postId}">
                                         <div class="post-card">
-                                          <img src="${cardArray[index[i]].imgUrl}" class="card-img">
-                                          <h3>${cardArray[index[i]].title}</h3>
+                                          <img src="${cardArray[index[indexIndex][i]].imgUrl}" class="card-img">
+                                          <h3>${cardArray[index[indexIndex][i]].title}</h3>
                                         </div>
                                     </a>`; 
 };
