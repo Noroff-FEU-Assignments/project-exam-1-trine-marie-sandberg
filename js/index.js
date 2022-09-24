@@ -1,8 +1,5 @@
-//import { postCardButtons } from "/js/post-card-buttons.js";
 import { gallerySlideShow } from "/js/gallery-slide-show.js";
-
 gallerySlideShow();
-//postCardButtons();
 
 const postUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts?_embed";
 const postContainer = document.querySelector(".post-card-container");
@@ -20,15 +17,12 @@ async function getPosts() {
     postContainer.innerHTML = "";
 
     for(let i = 0; i < json.length; i++) {
-        //console.log(json[i])
-        //STORE POSTDETAILS 
+
         try {
             postCardObject = { title: json[i].title.rendered,
                                postId: json[i].id,
                                imgUrl: json[i]._embedded['wp:featuredmedia'][0].source_url
                             };
-            if(!json[i]._embedded['wp:featuredmedia'][0].source_url) {postCardObject.imgUrl = ""}
-        
             cardArray.push(postCardObject);
 
         } catch(error) {
@@ -46,11 +40,11 @@ async function getPosts() {
 getPosts();
 
 //DISPLAY POST CARDS
-async function displayPosts() {
+function displayPosts() {
 
     try {
         
-        let index = [0, 1, 2, 4];
+        let index = [0, 1, 2, 3];
 
         function postCardButtons() {
             const btn1 = document.querySelector(".round-btn1");
@@ -59,13 +53,25 @@ async function displayPosts() {
             const roundNextBtn = document.querySelector(".round-next-btn");
 
             roundNextBtn.onclick = function() {
+                index = [4, 5, 6, 7];
+                postContainer.innerHTML = ""
+                for(let i = 0; i < index.length; i++) {
 
-            index = [5, 6, 7, 8];
+                    postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[index[i]].postId}">
+                                                    <div class="post-card">
+                                                      <img src="${cardArray[index[i]].imgUrl}" class="card-img">
+                                                      <h3>${cardArray[index[i]].title}</h3>
+                                                    </div>
+                                                </a>`; 
+            };
+            index = [8, 9, 10, 11];
+            
             }
         };
 
         postCardButtons();
 
+        
     for(let i = 0; i < index.length; i++) {
 
         postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[index[i]].postId}">
