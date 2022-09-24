@@ -1,14 +1,13 @@
 //MAKE API CALL TO ...WP/V2/POSTS AND CREATE HTML FOR DISPLAYING POST CARDS
 export function getPostCards() {
 
-const postUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts";
+const postUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts?_embed";
 const postContainer = document.querySelector(".post-card-container");
 postContainer.innerHTML = "Loading . . .";
 
 let postCardObject;
-let authorCardObject;
 let cardArray = [];
-let autorUrl;
+//let featuredImgUrl = [];
 
 async function getPosts() {
 
@@ -19,18 +18,28 @@ async function getPosts() {
     postContainer.innerHTML = "";
 
     for(let i = 0; i < json.length; i++) {
+
+        //console.log(json[i]._links['wp:featuredmedia'][0].href)
         console.log(json[i])
         //STORE POSTDETAILS
-        postCardObject = { postUrl: json[i].guid.rendered,
+        
+
+        
+        try {
+            postCardObject = { postUrl: json[i].guid.rendered,
                            title: json[i].title.rendered,
                            postPreview: json[i].excerpt.rendered,
-                           postId: json[i].id
+                           postId: json[i].id,
+                           imgUrl: json[i]._embedded['wp:featuredmedia'][0].source_url
                          };
+                         cardArray.push(postCardObject);
 
-        cardArray.push(postCardObject);
+        } catch(error) {
+            console.log(error);
+        }
+        
 
-        //AUTHOR DETAILS LINK
-        autorUrl = json[i]._links.author[0].href;
+        
     };
 
     displayPosts();
@@ -47,26 +56,21 @@ async function displayPosts() {
 
     try {
 
-        let autorResponse = await fetch(autorUrl);
-        let autorJson = await autorResponse.json();
-
-        authorCardObject = { image: autorJson.avatar_urls[48],
-                             name: autorJson.name
-                           };
-
     for(let i = 0; i < cardArray.length; i++) {
 
+        if(postCardObject.imgUrl == undefined) {
+
+            Object.keys(postCardObject).forEach(imgUrl => {
+                postCardObject[imgUrl] ="/img/cofee.jpg"
+            })
+            console.log(postCardObject)
+        }
+
         postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[i].postId}">
-                                      <div class="post-card flex-wrap">
-                                          <div class="author-wrap">
-                                             <image src="/img/profile-img.png" class="profile-img">
-                                             <p>${authorCardObject.name}</p>
-                                          </div>
-                                          <div class="post-preview">
-                                             <h3>${cardArray[i].title}</h3>
-                                             <p>${cardArray[i].postPreview}</p>
-                                          </div>
-                                       </div>
+                                        <div class="post-card">
+                                          <img src="${cardArray[i].imgUrl}" class="card-img">
+                                          <h3>${cardArray[i].title}</h3>
+                                        </div>
                                     </a>`;
 
 } } catch(error) {
