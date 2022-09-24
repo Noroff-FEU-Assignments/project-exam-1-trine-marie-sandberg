@@ -19,7 +19,7 @@ async function getPosts() {
     postContainer.innerHTML = "";
 
     for(let i = 0; i < json.length; i++) {
-console.log(json[i])
+        console.log(json[i])
         //STORE POSTDETAILS
         postCardObject = { postUrl: json[i].guid.rendered,
                            title: json[i].title.rendered,

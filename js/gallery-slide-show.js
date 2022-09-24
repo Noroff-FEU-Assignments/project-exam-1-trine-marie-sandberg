@@ -8,7 +8,6 @@ export function gallerySlideShow() {
 
         try {
 
-            //let imageName;
             const response = await fetch(galleryUrl);
             const json = await response.json();
             let urlArray = [];
@@ -17,7 +16,6 @@ export function gallerySlideShow() {
             for(let i = 0; i < json.length; i++) {
                 
                 let singleImgUrl = json[i].source_url;
-                console.log(singleImgUrl)
 
                 function searchForGallery(url) {
                     const regExUrl = /gallery/;
@@ -28,8 +26,7 @@ export function gallerySlideShow() {
                     };
                 };
 
-                searchForGallery(singleImgUrl)
-                //imageName = json[i].title.rendered;      
+                searchForGallery(singleImgUrl)  
             };
 
                     const slideShowNextBtn = document.querySelector(".slideshow-next-btn");
