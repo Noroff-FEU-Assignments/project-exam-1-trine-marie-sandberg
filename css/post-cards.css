@@ -24,20 +24,46 @@
 
 .header-home {
     margin-top: 0;
-    padding-top: 5px;
+    padding: 0;
 }
 
-.h2-home {
-    margin: 0 0 5px 0;
-    padding: 5px 10px;
-    background-color: #ffff;
-    border-radius: 10px;
-    border: solid 1px #e7e7e7;
+.home-h2 {
+    margin: 0;
+    padding: 0;
 }
 
 .home-h2-wrap {
     display: flex;
     justify-content: space-between;
+}
+
+.round-buttons {
+    height: 2vh;
+    width: 2vh;
+    background-color: rgba(14, 57, 90, 0.4);
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.round-buttons-wrap {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 5px;
+}
+
+.round-next-btn {
+    height: 40px;
+    width: 40px;
+    background-color: rgba(14, 57, 90, 0.4);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.round-next-btn-icon {
+    color: #ffff;
+    font-size: 1.5rem;
 }
 
 /* ARROW BUTTON */
