@@ -59,6 +59,9 @@ console.log(index)
                 
                 postContainer.innerHTML = ""
                 for(let i = 0; i < index.length; i++) {
+                   if(indexIndex == 3) {
+                    indexIndex = 0;
+                } 
 
                     postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[index[indexIndex][i]].postId}">
                                                     <div class="post-card">
@@ -66,6 +69,8 @@ console.log(index)
                                                       <h3>${cardArray[index[indexIndex][i]].title}</h3>
                                                     </div>
                                                 </a>`;
+
+                
             };
             
             
