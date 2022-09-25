@@ -41,31 +41,33 @@
     </header>
     <main>
         <div class="content-sidebar-wrap">
-            <div class="single-post-container content-sidebar-c"></div>
-            <div class="about-author content-sidebar-s"></div>
+            <div class="content-sidebar-c posts-img">
+                <img src="/img/archive-photo.jpg" class="auto-img">
+                <h1 class="header-special posts-h1">Post Archive</h1>
+            </div>
+            <div class="content-sidebar-s">
+                <h2>Welcome to our archive</h2>
+                <p>Here you will find all posts created for this blogg. You can browse, search and read as you like.
+                    However, if you are looking for our best images, we recomend you wisit our gallery onstead.
+                    Happy browsing!
+                </p>
+                <a href="/gallery.html"><h2>Gallery</h2></a>
+            </div>
         </div>
-        <div class="image-modal-container"></div>
-        <div class="single-post-content-container"></div>
-        <div>
-            <h2>Comments</h2>
-            <form>
-                <input type="text" name="author" placeholder="Your name" class="comment-author">
-                <input type="text" name="email" placeholder="Your e-mail" class="comment-email">
-                <input type="text-area" name="content" id="" placeholder="Your comment" class="comment-content">
-                <button class="add-comment-btn">Submit</button>
-            </form>
-            <div class="comments-container"></div>
-        </div>
+        <a class="posts-sort-wrap underline">
+            <h2 class="">Sort</h2>
+            <button class="sort-btn"><i class="fa-regular fa-calendar-plus media-icon"></i></button>
+        </a>
+        <div class="posts-container"></div>
     </main>
     <footer>
         <div class="footer">
             <p>© 2022, rights reserved</p>
             <div>
-                <p class="footer-text">A front end development learning project</p>
+                <p class="footer-text">A front end development learning project.</p>
             </div>
         </div>
     </footer>
-    
-    <script src="/js/single-post.js" type="module"></script>
+    <script src="/js/posts.js" type="module"></script>
 </body>
 </html>

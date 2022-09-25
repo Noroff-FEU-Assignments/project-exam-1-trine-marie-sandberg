@@ -53,11 +53,11 @@ function displayPosts() {
             const btn3 = document.querySelector(".round-btn3");
             const roundNextBtn = document.querySelector(".round-next-btn");
 
-            for(let i = 0; i < index[indexIndex].length; i++) {
-            postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[index[indexIndex][i]].postId}">
+            for(let i = 0; i < index[0].length; i++) {
+            postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[index[0][i]].postId}">
                                         <div class="post-card">
-                                        <img src="${cardArray[index[indexIndex][i]].imgUrl}" class="card-img">
-                                        <h3>${cardArray[index[indexIndex][i]].title}</h3>
+                                        <img src="${cardArray[index[0][i]].imgUrl}" class="card-img">
+                                        <h3>${cardArray[index[0][i]].title}</h3>
                                         </div>
                                         </a>`
                                     };
@@ -74,7 +74,10 @@ function displayPosts() {
                 for(let i = 0; i < index[indexIndex].slice(-1); i++) {
 
                     createPostCards(i);
-                    if(i == 4) { postContainer.innerHTML = ""}
+                    if(i === 3) { 
+                        console.log("i === 3: ")
+                        postContainer.innerHTML = ""
+                }
                 }
 
                 function createPostCards(input) {
