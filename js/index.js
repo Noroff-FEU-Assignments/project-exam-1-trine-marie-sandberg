@@ -44,51 +44,53 @@ function displayPosts() {
 
     try {
         
-        let index = [[0, 1, 2, 3], [4, 5, 6, 7], [8]];
+        let index = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9]];
         let indexIndex = 0;
-console.log(index)
+        console.log(index)
         function postCardButtons() {
             const btn1 = document.querySelector(".round-btn1");
             const btn2 = document.querySelector(".round-btn2");
             const btn3 = document.querySelector(".round-btn3");
             const roundNextBtn = document.querySelector(".round-next-btn");
 
+            for(let i = 0; i < index[indexIndex].length; i++) {
+            postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[index[indexIndex][i]].postId}">
+                                        <div class="post-card">
+                                        <img src="${cardArray[index[indexIndex][i]].imgUrl}" class="card-img">
+                                        <h3>${cardArray[index[indexIndex][i]].title}</h3>
+                                        </div>
+                                        </a>`
+                                    };
+
             roundNextBtn.onclick = function() {
 
                 indexIndex ++
                 
-                postContainer.innerHTML = ""
-                for(let i = 0; i < index.length; i++) {
-                   if(indexIndex == 3) {
-                    indexIndex = 0;
-                } 
-
-                    postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[index[indexIndex][i]].postId}">
-                                                    <div class="post-card">
-                                                      <img src="${cardArray[index[indexIndex][i]].imgUrl}" class="card-img">
-                                                      <h3>${cardArray[index[indexIndex][i]].title}</h3>
-                                                    </div>
-                                                </a>`;
-
+                if(indexIndex === 3) {
+                   indexIndex = 0;}
                 
-            };
-            
-            
-            }
+                postContainer.innerHTML = ""
+
+                for(let i = 0; i < index[indexIndex].slice(-1); i++) {
+
+                    createPostCards(i);
+                    if(i == 4) { postContainer.innerHTML = ""}
+                }
+
+                function createPostCards(input) {
+                    console.log(input)
+                    postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[input].postId}">
+                                                <div class="post-card">
+                                                <img src="${cardArray[input].imgUrl}" class="card-img">
+                                                <h3>${cardArray[input].title}</h3>
+                                                </div>
+                                                </a>`                          
+                };
+                console.log("TESTLOG " + index[indexIndex])
+            };       
         };
 
         postCardButtons();
-
-        
-    for(let i = 0; i < index.length; i++) {
-
-        postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[index[indexIndex][i]].postId}">
-                                        <div class="post-card">
-                                          <img src="${cardArray[index[indexIndex][i]].imgUrl}" class="card-img">
-                                          <h3>${cardArray[index[indexIndex][i]].title}</h3>
-                                        </div>
-                                    </a>`; 
-};
 
 } catch(error) {
 
