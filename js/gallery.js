@@ -1,5 +1,5 @@
-import { gallerySlideShow } from "/js/gallery-slide-show.js";
-gallerySlideShow();
+//import { gallerySlideShow } from "/js/gallery-slide-show.js";
+//gallerySlideShow();
 const galleryUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/media";
 
 let miniImages = document.querySelector(".mini-images-container");
