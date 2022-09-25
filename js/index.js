@@ -69,7 +69,7 @@ function displayPosts() {
                 if(indexIndex === 3) {
                    indexIndex = 0;}
                 
-                postContainer.innerHTML = ""
+                postContainer.innerHTML = "";
 
                 for(let i = 0; i < index[indexIndex].slice(-1); i++) {
 
@@ -78,7 +78,7 @@ function displayPosts() {
                 }
 
                 function createPostCards(input) {
-                    console.log(input)
+                    console.log("i = " + input)
                     postContainer.innerHTML += `<a href="single-post.html?id=${cardArray[input].postId}">
                                                 <div class="post-card">
                                                 <img src="${cardArray[input].imgUrl}" class="card-img">
@@ -86,7 +86,7 @@ function displayPosts() {
                                                 </div>
                                                 </a>`                          
                 };
-                console.log("TESTLOG " + index[indexIndex])
+                console.log("index[indexIndex]: " + index[indexIndex])
             };       
         };
 
