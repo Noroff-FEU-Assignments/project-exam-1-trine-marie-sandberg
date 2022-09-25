@@ -39,6 +39,7 @@
 
 .posts-sort-wrap {
     display: flex;
+    justify-content: space-between;
 }
 
 .sort-btn {
@@ -46,6 +47,7 @@
     margin-bottom: 15px;
     background-color: #ffff;
     border: none;
+    cursor: pointer;
 }
 
 @media(max-width: 1100px) {
