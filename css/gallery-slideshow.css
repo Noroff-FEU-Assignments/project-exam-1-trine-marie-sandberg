@@ -1,3 +1,4 @@
+/* HOMEPAGE */
 .gallery-slideshow-container {
     background-size: cover;
     height: 700px;
@@ -19,4 +20,14 @@
     padding-top: 250px;
     display: flex;
     justify-content: space-between;
+}
+
+/* GALLERY PAGE */
+.mini-images-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.mini-img {
+    height: auto;
+    width: 250px;
 }
