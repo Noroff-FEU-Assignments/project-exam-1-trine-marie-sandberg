@@ -2,7 +2,8 @@ const postsContainer = document.querySelector(".posts-container");
 const postsCounter = document.querySelector(".posts-show-counter");
 
 export function postsButtons() {
-    //NEXT BUTTON
+
+//NEXT BUTTON
 const nextBtn = document.querySelector(".round-next-btn");
 let page = 1;
 
@@ -81,7 +82,6 @@ previousBtn.onclick = function nextPage() {
                 </div>
              </a>`;
             };
-            
             
         } catch(error) {
             console.log(error);
