@@ -2,7 +2,7 @@ export function gallerySlideShow() {
     
     const galleryUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/media";
     const gallerySlideshowContainer = document.querySelector(".gallery-slideshow-container");
-    gallerySlideshowContainer.style.backgroundImage = `url("https://gamehub-wp-api.one/mhpb-blogg-content/wp-content/uploads/2022/09/gallery/stone-road.jpg")`;
+    gallerySlideshowContainer.style.backgroundImage = `url("https://gamehub-wp-api.one/mhpb-blogg-content/wp-content/uploads/2022/09/gallery/stone-and-flowers.jpg")`;
 
     async function getImages() {
 
