@@ -125,3 +125,11 @@ showMoreBtn.onclick = async function showMore() {
     };
 };
 };
+
+//TO TOP
+const toTop = document.querySelector(".to-top-btn");
+
+toTop.onclick = function() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+};
