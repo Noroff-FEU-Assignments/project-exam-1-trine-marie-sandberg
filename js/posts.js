@@ -3,7 +3,8 @@ postsButtons();
 
 const postsContainer = document.querySelector(".posts-container");
 postsContainer.innerHTML = "<p>Loading . . .</p>";
-let currentPage;
+const postsCounter = document.querySelector(".posts-show-counter");
+postsCounter.innerHTML = "<p>Page 1</p>";
 
 async function getPosts() {
 
@@ -13,8 +14,6 @@ async function getPosts() {
         const response = await fetch(postsUrl);
         const postJson = await response.json();
         console.log(postJson);
-
-        currentPage = response.headers.get("x-wp-totalpages");
 
         postsContainer.innerHTML = "";
         for(let i = 0; i < postJson.length; i++) {
