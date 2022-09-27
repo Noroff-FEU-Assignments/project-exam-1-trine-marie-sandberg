@@ -11,24 +11,32 @@ const subject = document.querySelector(".subject");
 const message = document.querySelector(".message");
 
 const submitForm = document.querySelector(".contact-form");
+const success = document.querySelector(".success-message");
 
 //CONTACT FORM VALIDATION
 function formValidation(submit) {
+    
+    submit.preventDefault();
 
-submit.preventDefault();
+    inputLengthValidation(name, 5, nameError);
+    inputLengthValidation(subject, 15, subjectError);
+    inputLengthValidation(message, 25, messageError);
+    
+    if (emailValidation(email.value) === true) {
+        
+        emailError.style.display = "none";
+    } else {
+        
+        email.value.trim().length === 0 ? emailError.style.display = "none" : emailError.style.display = "block";
 
-inputLengthValidation(name, 5, nameError);
+    } if (nameError.style.display === "none" && subjectError.style.display === "none" && emailError.style.display === "none") {
+        
+        success.style.display = "block";
+        name.value = "";
+        email.value = "";
+        subject.value = "";
+        message.value = "";
+    };
+};
 
-if (emailValidation(email.value) === true) {
-
-    emailError.style.display = "none";
-}
-
-else {
-
-    email.value.trim().length === 0 ? emailError.style.display = "none" : emailError.style.display = "block";
-} 
-
-}
-
-submitForm.addEventListener("submit", formValidation)
+submitForm.addEventListener("submit", formValidation);

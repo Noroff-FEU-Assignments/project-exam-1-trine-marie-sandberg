@@ -45,17 +45,18 @@
                 <div class="contact-form-container">
                     <form class="contact-form">
                         <label for="name">Name</label>
-                        <p class="error-message-form name-error">*Name required</p>
+                        <p class="error-message-form name-error">*Name required (minimum 5 characters)</p>
                         <input type="text-field" class="name" name="name">
                         <label for="email">Email</label>
                         <p class="error-message-form email-error">*Please enter valid email</p>
-                        <input type="email" class="email" name="email">
+                        <input type="text" class="email" name="email">
                         <label for="subject">Subject</label>
-                        <p class="error-message-form subject-error">*Subject required</p>
+                        <p class="error-message-form subject-error">*Subject required (minimum 15 characters)</p>
                         <input type="text" class="subject" name="subject">
                         <label for="message">Message</label>
-                        <p class="error-message-form message-error">*Message cannot be empty (at least 25 characters)</p>
+                        <p class="error-message-form message-error">*Message cannot be empty (minimum 25 characters)</p>
                         <input type="text" class="message" name="message">
+                        <h2 class="success-message">Your message was successfully submitted and sent :)</h2>
                         <button type="submit" class="submit-btn">SUBMIT</button>
                     </form>
                 </div>
