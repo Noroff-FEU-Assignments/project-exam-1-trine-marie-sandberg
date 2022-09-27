@@ -10,24 +10,25 @@ const email = document.querySelector(".email");
 const subject = document.querySelector(".subject");
 const message = document.querySelector(".message");
 
-const submitBtn = document.querySelector(".submit-btn");
+const submitForm = document.querySelector(".contact-form");
 
 //CONTACT FORM VALIDATION
-    // inputLengthValidation(name, 5, nameError);
+function formValidation(submit) {
 
-    // if (emailValidation(email.value) === true) {
+submit.preventDefault();
 
-    //     emailError.style.display = "none";
-    // }
+inputLengthValidation(name, 5, nameError);
 
-    // else {
+if (emailValidation(email.value) === true) {
 
-    //     email.value.trim().length === 0 ? emailError.style.display = "none" : emailError.style.display = "block";
-    // } 
-    function formValidation(event) {
+    emailError.style.display = "none";
+}
 
-        event.preventDefault();
-    };
-    formValidation()
-    
-    submitBtn.addEventListener("submit", formValidation);
+else {
+
+    email.value.trim().length === 0 ? emailError.style.display = "none" : emailError.style.display = "block";
+} 
+
+}
+
+submitForm.addEventListener("submit", formValidation)
