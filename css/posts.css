@@ -1,11 +1,11 @@
-.posts-img {
-    position: relative;
-}
 .posts-h1 {
-    position: absolute;
-    top: 0;
-    left: 40px;
-    font-size: 4vw;
+    padding: 40px 0 0 50px;
+}
+
+.content-sidebar-c {
+    background-image: url(/img/archive-photo.jpg);
+    height: 400px;
+    background-size: cover;
 }
 
 .posts-container {
