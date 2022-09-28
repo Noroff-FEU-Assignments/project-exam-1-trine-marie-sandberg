@@ -49,6 +49,8 @@
                     <input id="search" type="text" placeholder="Search in post archive">
                 </form>
             </div>
+            <i class="fa-solid fa-bars media-icon hamburger-icon"></i>
+            <i class="fa-solid fa-xmark media-icon cancel-menu"></i>
         </div>
     </header>
     <main>
@@ -71,13 +73,13 @@
                 <div class="underline home-h2-wrap">
                     <a><h2 class="home-h2">Latest posts</h2></a>
                     <div class="round-buttons-wrap">
-                        <a href="#" class="round-buttons round-btn1"></a>
+                        <button class="round-previous-btn"><i class="fa-solid fa-angle-left round-next-btn-icon"></i></button>
+                        <!-- <a href="#" class="round-buttons round-btn1"></a>
                         <a href="#" class="round-buttons round-btn2"></a>
-                        <a href="#" class="round-buttons round-btn3"></a>
+                        <a href="#" class="round-buttons round-btn3"></a> -->
                         <button class="round-next-btn"><i class="fa-solid fa-angle-right round-next-btn-icon"></i></button>
                     </div>
                 </div>
-                
                 <div class="post-card-container"></div>
             </div>
         </div>
@@ -91,7 +93,7 @@
             </div>
         </div>
     </footer>
-    
+    <script src="/js/hamburger.js"></script>
     <script src="/js/index.js" type="module"></script>
 </body>
 </html>
