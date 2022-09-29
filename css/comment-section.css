@@ -12,3 +12,11 @@
     border-radius: 5px;
     margin: 10px 0;
 }
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 2vw 6vw;
+    background-color: rgba(255, 255, 255, 0.445);
+}
