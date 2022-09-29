@@ -34,6 +34,7 @@ export function addComment() {
                 if (createComment.readyState == 4) {
                     if(createComment.status == 201) {
                         alert("success!");
+                        location.reload();
                     } else {alert("Error, please try again")}
                 };
             };

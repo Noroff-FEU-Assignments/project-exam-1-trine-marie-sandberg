@@ -11,8 +11,6 @@ export async function displayComments() {
         let comments = await getComment.json();
         
         for(let i = 0; i < comments.length; i++) {
-            console.log(comments[i])
-            console.log(comments[i].content)
 
             if(comments[i].post == postId) {
                 commentsContainer.innerHTML += `<div class="comment-section-content">
