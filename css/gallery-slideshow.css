@@ -25,13 +25,25 @@
 
 /* GALLERY PAGE */
 .mini-images-container {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
 }
+
 .mini-img {
     height: auto;
-    width: 250px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 150ms;
+}
+
+.mini-img:hover {
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 10px #181616;
 }
 
 .gallery-display {

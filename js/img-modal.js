@@ -43,7 +43,5 @@ export function imageModal() {
                 console.log(error);
                 imgModalContainer.innerHTML = "cant load img";
             };
-        };
-        
-                    
+        };                
 };
