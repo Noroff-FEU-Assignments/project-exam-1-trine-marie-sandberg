@@ -1,5 +1,4 @@
-//import { gallerySlideShow } from "/js/gallery-slide-show.js";
-//gallerySlideShow();
+import { imageModal } from "/js/img-modal.js";
 const galleryUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/media";
 
 let miniImages = document.querySelector(".mini-images-container");
@@ -18,7 +17,9 @@ async function getImages() {
             miniImages.innerHTML += `<img class="mini-img" src="${imgJson[i].source_url}">`;
             };
 
-        imageModal();
+            let targetImages = document.querySelectorAll(".mini-images-container > img");
+            console.log(targetImages)
+        imageModal(targetImages);
 
     } catch(error) {
 
@@ -28,52 +29,51 @@ async function getImages() {
 
 getImages();
 
-function imageModal() {
+// function imageModal() {
 
-    const targetPostImages = document.querySelectorAll(".mini-img");
-    const imgPopup = document.querySelector(".image-popup");
+//     const imgPopup = document.querySelector(".image-popup");
 
-    targetPostImages.forEach( img => 
-        img.addEventListener("click", imgModal));
+//     targetPostImages.forEach( img => 
+//         img.addEventListener("click", imgModal));
 
-        function imgModal() {
+//         function imgModal() {
 
-            imgPopup.style.display="block";
+//             imgPopup.style.display="block";
 
-            try {
+//             try {
 
-                //OPEN MODAL
-                let clickedImage = this;
-                console.log(this)
-                console.log(clickedImage)
+//                 //OPEN MODAL
+//                 let clickedImage = this;
+//                 console.log(this)
+//                 console.log(clickedImage)
 
-                let targetPostImagesUrl = clickedImage.getAttribute("src");
-                let targetPostImageAltText = clickedImage.getAttribute("alt");
+//                 let targetPostImagesUrl = clickedImage.getAttribute("src");
+//                 let targetPostImageAltText = clickedImage.getAttribute("alt");
 
-                imgPopupModal.innerHTML = `<i class="fa-solid fa-x cansel-x"></i>
-                                               <img src="${targetPostImagesUrl}" class="auto-img modal-img" alt="${targetPostImageAltText}">`;
+//                 imgPopupModal.innerHTML = `<i class="fa-solid fa-x cansel-x"></i>
+//                                                <img src="${targetPostImagesUrl}" class="auto-img modal-img" alt="${targetPostImageAltText}">`;
 
-                //CLOSE MODAL (with button)
-                const canselX = document.querySelector(".cansel-x");
+//                 //CLOSE MODAL (with button)
+//                 const canselX = document.querySelector(".cansel-x");
 
-                function closeModal() {
+//                 function closeModal() {
                     
-                    imgPopupModal.style.display = "none";
-                };
+//                     imgPopupModal.style.display = "none";
+//                 };
 
-                canselX.addEventListener("click", closeModal);
+//                 canselX.addEventListener("click", closeModal);
 
-                //CLOSE MODAL (click outside of div)
-                window.addEventListener('mouseup',function(event){
+//                 //CLOSE MODAL (click outside of div)
+//                 window.addEventListener('mouseup',function(event){
 
-                    if(event.target != imgPopupModal && event.target.parentNode != imgPopupModal){
-                        imgPopupModal.style.display = 'none';
-                    }
-              }); 
+//                     if(event.target != imgPopupModal && event.target.parentNode != imgPopupModal){
+//                         imgPopupModal.style.display = 'none';
+//                     }
+//               }); 
 
-            } catch(error) {
-                console.log(error);
-                imgModalContainer.innerHTML = "cant load img";
-            };
-        };                
-};
+//             } catch(error) {
+//                 console.log(error);
+//                 imgModalContainer.innerHTML = "cant load img";
+//             };
+//         };                
+// };

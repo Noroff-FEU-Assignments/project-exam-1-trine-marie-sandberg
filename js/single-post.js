@@ -46,7 +46,8 @@ async function getSinglePost() {
                                           <div>${postJson.content.rendered}</div>`;
 
                                           //IMPORTING MODAL FOR BIGGER IMG
-                                          imageModal();
+                                          const targetModalImages = document.querySelectorAll("figure > img, .wp-block-cover > img");
+                                          imageModal(targetModalImages);
 
         const removeEmojis = document.querySelector(".booster-reactions-block");
         removeEmojis.style.display ="none";
