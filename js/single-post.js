@@ -1,8 +1,7 @@
 import { imageModal } from "/js/img-modal.js";
 import { addComment } from "/js/add-comment.js";
 import { displayComments } from "/js/display-comments.js";
-
-
+import { inputLengthValidation, emailValidation } from "/js/form-functions.js";
 
 const queryString = document.location.search;
 const param = new URLSearchParams(queryString);
@@ -13,8 +12,6 @@ const aboutAuthorContainer = document.querySelector(".about-author");
 const postContentContainer = document.querySelector(".single-post-content-container");
 
 let singlePostUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts/" + id + "?_embed";
-addComment();
-
 
 async function getSinglePost() {
 
@@ -60,5 +57,40 @@ async function getSinglePost() {
 };
 
 getSinglePost();
+
+addComment();
+//FORM VALIDATION
+//inputs
+const submitForm = document.querySelector(".add-comment-btn");
+const name = document.querySelector(".name");
+const email = document.querySelector(".email");
+const message = document.querySelector(".message");
+//errors
+const nameError = document.querySelector(".name-error");
+const emailError = document.querySelector(".email-error");
+const messageError = document.querySelector(".message-error");
+
+function formValidation() {
+
+    inputLengthValidation(name, 1, nameError);
+    inputLengthValidation(message, 2, messageError);
+    
+    if (emailValidation(email.value) === true) {
+        
+        emailError.style.display = "none";
+
+    } if(email.value === 0) {
+        emailError.style.display = "block";
+    }
+    if (nameError.style.display === "none" && emailError.style.display === "none") {
+        
+        name.value = "";
+        email.value = "";
+        message.value = "";
+    };
+};
+
+submitForm.addEventListener("click", formValidation);
+//formValidation()
 
 displayComments();

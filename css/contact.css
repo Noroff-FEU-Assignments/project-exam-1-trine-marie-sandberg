@@ -79,10 +79,37 @@ label {
     cursor: pointer;
 }
 
+.coment-success-btn {
+    color: #373737;
+    background-color: #ffff;
+    border: #373737 1px solid;
+    border-radius: 5px;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
 .success-message {
+    display: none;
     background-color: rgba(6, 49, 20, 0.692);
     border-radius: 5px;
     color: #ffff;
     display: none;
     margin-top: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.success-text {
+    color: #ffff;
+}
+
+.error-message {
+    display: none;
+    background-color: #290101;
+    border-radius: 5px;
+}
+
+.error-text {
+    color: #ffff;
+    padding: 10px;
 }
