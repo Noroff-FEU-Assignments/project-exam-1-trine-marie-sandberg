@@ -7,7 +7,6 @@ searchBar.addEventListener("keyup", search);
 
 function search(event) {
     const searchString = event.target.value;
-    console.log(searchString);
 
             let filteredPosts = postArray.filter(post => {
                 return post.title.rendered.includes(searchString)
