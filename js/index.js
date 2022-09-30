@@ -63,6 +63,10 @@ async function getPosts() {
         } if(clickNumber === 2) {
             indexFrom = 8;
             indexTo = 10;
+        } if(clickNumber === 3) {
+            indexFrom = 0;
+            indexTo = 4;
+            clickNumber = 0;
         }
         console.log("from: " + indexFrom + " to: " + indexTo)
         loopCards()
