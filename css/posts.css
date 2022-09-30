@@ -85,6 +85,7 @@
 
 /* SEARCH */
 .search-list-container {
+    display: none;
     background-color: #ffff;
     position: absolute;
     overflow: scroll;

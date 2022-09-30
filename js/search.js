@@ -12,6 +12,7 @@ function search(event) {
             let filteredPosts = postArray.filter(post => {
                 return post.title.rendered.includes(searchString)
         });
+        searchListContainer.style.display = "block"
         postList(filteredPosts)
         console.log(filteredPosts)
 };
@@ -37,7 +38,7 @@ function search(event) {
 
        const postList = (postArray) => {
            const htmlString = postArray.map((post) => {
-               return `<a href="">
+               return `<a href="single-post.html?id=${post.id}">
                           <li>
                              <h2>${post.title.rendered}</h2>
                              <p>${post.slug}</p>
