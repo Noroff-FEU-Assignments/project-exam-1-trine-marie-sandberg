@@ -38,7 +38,7 @@ async function getPosts() {
         };
     };
 
-    //LOOP POSTCARDS -start
+    //LOOP AND DISPLAY POSTCARDS -start
     let indexFrom = 0;
     let indexTo = 4;
     
@@ -47,7 +47,7 @@ async function getPosts() {
         postCards(cardArray[i]);
     };    
 
-    //LOOP POSTCARDS -on click
+    //LOOP AND DISPLAY POSTCARDS -on click
     function loopCards() {
         postContainer.innerHTML = "";
         for(let i = indexFrom; i < indexTo; i++) {
