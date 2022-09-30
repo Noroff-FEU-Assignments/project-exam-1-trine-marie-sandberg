@@ -7,6 +7,7 @@ const postContainer = document.querySelector(".post-card-container");
 postContainer.innerHTML = "Loading . . .";
 
 const nextButton = document.querySelector(".round-next-btn");
+const previousButton = document.querySelector(".round-previous-btn");
 
 let postCardObject;
 let cardArray = [];
@@ -56,23 +57,51 @@ async function getPosts() {
 
     function nextPage() {
         clickNumber++
-
-        if(clickNumber === 1) {
-            indexFrom = 4;
-            indexTo = 8;
-        } if(clickNumber === 2) {
-            indexFrom = 8;
-            indexTo = 10;
-        } if(clickNumber === 3) {
-            indexFrom = 0;
-            indexTo = 4;
-            clickNumber = 0;
-        }
+        console.log(clickNumber)
+        switchNumbers()
         console.log("from: " + indexFrom + " to: " + indexTo)
         loopCards()
     };
 
 nextButton.addEventListener("click", nextPage);
+
+function previousPage() {
+    clickNumber--
+    console.log(clickNumber)
+    switchNumbers()
+    console.log("from: " + indexFrom + " to: " + indexTo)
+    loopCards()
+};
+
+previousButton.addEventListener("click", previousPage);
+
+function switchNumbers() {
+
+    if(clickNumber === 1) {
+        indexFrom = 4;
+        indexTo = 8;
+    } if(clickNumber === 2) {
+        indexFrom = 8;
+        indexTo = 10;
+    } if(clickNumber === 3) {
+        indexFrom = 0;
+        indexTo = 4;
+        clickNumber = -2;
+
+        //________________
+    } 
+    if(clickNumber === 0) {
+        indexFrom = 8;
+        indexTo = 10;
+    } if(clickNumber === -1) {
+        indexFrom = 4;
+        indexTo = 8;
+    } if(clickNumber === -2) {
+        indexFrom = 0;
+        indexTo = 4;
+        clickNumber = 0;
+    }
+};
     
     //displayPosts();
     

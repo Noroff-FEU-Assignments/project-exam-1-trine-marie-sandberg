@@ -1,5 +1,5 @@
 export function postCards(cardObject) {
-    
+
     const postContainer = document.querySelector(".post-card-container");
 
     postContainer.innerHTML += `<a href="single-post.html?id=${cardObject.postId}">
