@@ -23,7 +23,7 @@
 
 .post-cover-img {
     height: auto;
-    width: 400px;
+    max-width: 400px;
 }
 
 .post-cover-text {
