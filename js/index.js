@@ -35,9 +35,9 @@ async function getPosts() {
     };
     
     console.log(cardArray)
-
-    let indexTo = 4;
+      
     let indexFrom = 0;
+    let indexTo = 4;
 
     for(let i = indexFrom; i < indexTo; i++) {
 
@@ -49,18 +49,24 @@ async function getPosts() {
         for(let i = indexFrom; i < indexTo; i++) {
 
             postCards(cardArray[i]);
-
         };
-    }
+    };
 
-
+    let clickNumber = 0;
 
     function nextPage() {
-        indexTo++
-        indexFrom++
-        loopCards(indexTo, indexFrom)
-          
-};
+        clickNumber++
+
+        if(clickNumber === 1) {
+            indexFrom = 4;
+            indexTo = 8;
+        } if(clickNumber === 2) {
+            indexFrom = 8;
+            indexTo = 10;
+        }
+        console.log("from: " + indexFrom + " to: " + indexTo)
+        loopCards()
+    };
 
 nextButton.addEventListener("click", nextPage);
     
