@@ -86,20 +86,23 @@ function switchNumbers() {
     } if(clickNumber === 3) {
         indexFrom = 0;
         indexTo = 4;
-        clickNumber = -2;
+        clickNumber = 0;
 
         //________________
     } 
-    if(clickNumber === 0) {
+    if(clickNumber === -1) {
         indexFrom = 8;
         indexTo = 10;
-    } if(clickNumber === -1) {
+    } if(clickNumber === -2) {
         indexFrom = 4;
         indexTo = 8;
-    } if(clickNumber === -2) {
+    } if(clickNumber === -3) {
+        indexFrom = 8;
+        indexTo = 10;
+        clickNumber = 0;
+    } if(clickNumber === 0) {
         indexFrom = 0;
         indexTo = 4;
-        clickNumber = 0;
     }
 };
     
