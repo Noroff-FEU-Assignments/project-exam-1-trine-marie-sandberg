@@ -83,6 +83,15 @@
     padding: 10px 20px ;
 }
 
+/* SEARCH */
+.search-list-container {
+    background-color: #ffff;
+    position: absolute;
+    overflow: scroll;
+    max-height: 50vh;
+    top: 50px;
+}
+
 @media(max-width: 1100px) {
     .post-cover {
         flex-direction: column;
