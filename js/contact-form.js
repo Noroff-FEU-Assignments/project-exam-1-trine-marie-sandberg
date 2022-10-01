@@ -1,4 +1,5 @@
 import { inputLengthValidation, emailValidation } from "/js/form-functions.js";
+
 //ERRORS
 const nameError = document.querySelector(".name-error");
 const emailError = document.querySelector(".email-error");
@@ -25,9 +26,9 @@ function formValidation(submit) {
     if (emailValidation(email.value) === true) {
         
         emailError.style.display = "none";
-    } else {
-        
-        email.value.trim().length === 0 ? emailError.style.display = "none" : emailError.style.display = "block";
+    }  if(email.value.length === 0) {
+
+        emailError.style.display = "block";
 
     } if (nameError.style.display === "none" && subjectError.style.display === "none" && emailError.style.display === "none") {
         
