@@ -2,7 +2,7 @@ import { postsButtons } from "/js/posts-buttons.js";
 postsButtons();
 
 const postsContainer = document.querySelector(".posts-container");
-postsContainer.innerHTML = "<p>Loading . . .</p>";
+postsContainer.innerHTML = `<div class="loader"></div>`;
 const postsCounter = document.querySelector(".posts-show-counter");
 postsCounter.innerHTML = "<p>Page 1</p>";
 
@@ -34,7 +34,7 @@ async function getPosts() {
 
         if(!postsContainer.innerHTML.indexOf("word") != -1) {
             postsContainer.innerHTML = `<p>Sorry, could not load content. Please refresh the page, or try again later.</p>
-                                        <button class="refresh-btn">REFRESH</button>`;
+                                        <button class="refresh-btn show-more-btn"><p class="butn-p">REFRESH</p></button>`;
                                         const refreshBtn = document.querySelector(".refresh-btn");
                                         refreshBtn.onclick = function() {
                                             location.reload();

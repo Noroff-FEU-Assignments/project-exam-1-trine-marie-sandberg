@@ -4,7 +4,7 @@ gallerySlideShow()
 
 const galleryUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/media?per_page=12";
 const miniImages = document.querySelector(".mini-images-container");
-miniImages.innerHTML = "<p>Loading . . .</p>";
+miniImages.innerHTML = `<div class="loader"></div>`;
 
 //GET IMAGES
 async function getImages() {

@@ -4,7 +4,7 @@ gallerySlideShow();
 
 const postUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts?_embed";
 const postContainer = document.querySelector(".post-card-container");
-postContainer.innerHTML = "Loading . . .";
+postContainer.innerHTML = `<div class="loader"></div>`;
 
 const nextButton = document.querySelector(".round-next-btn");
 const previousButton = document.querySelector(".round-previous-btn");
