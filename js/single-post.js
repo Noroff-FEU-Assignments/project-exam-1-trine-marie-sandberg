@@ -14,6 +14,7 @@ singlePostContainer.innerHTML = `<div class="loader"></div>`;
 
 let singlePostUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts/" + id + "?_embed";
 
+//DISPLAY POST
 async function getSinglePost() {
 
     try {
@@ -44,9 +45,9 @@ async function getSinglePost() {
         postContentContainer.innerHTML = `<h1>${postJson.title.rendered}</h1>
                                           <div>${postJson.content.rendered}</div>`;
 
-                                          //IMPORTING MODAL FOR BIGGER IMG
-                                          const targetModalImages = document.querySelectorAll("figure > img, .wp-block-cover > img");
-                                          imageModal(targetModalImages);
+        //IMPORTING MODAL FOR BIGGER IMG
+        const targetModalImages = document.querySelectorAll("figure > img, .wp-block-cover > img");
+        imageModal(targetModalImages);
 
         const removeEmojis = document.querySelector(".booster-reactions-block");
         removeEmojis.style.display ="none";
@@ -55,19 +56,19 @@ async function getSinglePost() {
 
     } catch(error) {
         console.log(error)
-    }
+    };
 };
 
 getSinglePost();
 
 addComment();
+
 //FORM VALIDATION
-//inputs
 const submitForm = document.querySelector(".add-comment-btn");
 const name = document.querySelector(".name");
 const email = document.querySelector(".email");
 const message = document.querySelector(".message");
-//errors
+
 const nameError = document.querySelector(".name-error");
 const emailError = document.querySelector(".email-error");
 const messageError = document.querySelector(".message-error");
@@ -82,9 +83,10 @@ function formValidation() {
         emailError.style.display = "none";
 
     } if(email.value.length === 0) {
+
         emailError.style.display = "block";
-    }
-    if (nameError.style.display === "none" && emailError.style.display === "none") {
+
+    } if (nameError.style.display === "none" && emailError.style.display === "none" && messageError.style.display === "none") {
         
         name.value = "";
         email.value = "";
