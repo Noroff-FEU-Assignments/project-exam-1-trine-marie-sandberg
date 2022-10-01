@@ -81,7 +81,7 @@ function formValidation() {
         
         emailError.style.display = "none";
 
-    } if(email.value === 0) {
+    } if(email.value.length === 0) {
         emailError.style.display = "block";
     }
     if (nameError.style.display === "none" && emailError.style.display === "none") {
@@ -93,6 +93,5 @@ function formValidation() {
 };
 
 submitForm.addEventListener("click", formValidation);
-//formValidation()
 
 displayComments();
