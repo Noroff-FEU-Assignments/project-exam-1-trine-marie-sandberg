@@ -25,6 +25,7 @@ export async function displayComments() {
 
     } catch(error) {
 
-        console.log(error)
+        console.log(error);
+        commentsContainer.innerHTML += "Sorry, could not load content";
     };
 };

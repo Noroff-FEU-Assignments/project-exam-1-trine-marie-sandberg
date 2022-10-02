@@ -24,6 +24,7 @@ async function getImages() {
     } catch(error) {
 
         console.log(error);
+        miniImages.innerHTML += "Sorry, could not load content";
     };
 };
 

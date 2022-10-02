@@ -39,8 +39,9 @@ export function imageModal(modalImages) {
               }); 
 
             } catch(error) {
+                
                 console.log(error);
-                imgModalContainer.innerHTML = "cant load img";
+                imgModalContainer.innerHTML = "sorry, could not load image";
             };
         };                
 };

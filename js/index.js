@@ -37,6 +37,7 @@ async function getPosts() {
         } catch(error) {
             
             console.log(error);
+            postContainer.innerHTML = "Sorry, could not load posts.";
         };
     };
 
@@ -97,7 +98,7 @@ async function getPosts() {
             indexTo = 4;
             clickNumber = 0;
         };
-        
+
         //NEGATIVE CLICKNUMBERS
         if(clickNumber === -1) {
             indexFrom = 8;
