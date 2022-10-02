@@ -69,12 +69,13 @@
     display: hidden;
     position: absolute;
     margin: 0 auto;
-    bottom: 0;
+    bottom: -600px;
 }
 
 .modal-img {
     max-height: 80vh;
     max-width: 80vw;
+    z-index: 90;
 }
 
 .cansel-x {
@@ -88,6 +89,7 @@
     position: absolute;
     right: 0;
     cursor: pointer;
+    z-index: 100;
 }
 
 .cansel-x:hover {
