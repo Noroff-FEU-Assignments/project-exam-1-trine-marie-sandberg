@@ -115,3 +115,14 @@
         flex-wrap: wrap;
     }
 }
+
+@media(max-width: 600px) {
+
+    .image-modal-container {
+        display: none !important;
+    }
+
+    .single-post-content-container :is(img) {
+        cursor: auto;
+    }
+}
