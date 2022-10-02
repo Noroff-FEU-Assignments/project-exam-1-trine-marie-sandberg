@@ -25,6 +25,7 @@ async function getSinglePost() {
         try {
             singlePostContainer.innerHTML = "";
             singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}" class="featured-img">`;
+            document.title = `${postJson.title.rendered} - Post`;
 
         } catch(error) {
             singlePostContainer.innerHTML += `<div class="featured-img-placeholder">
