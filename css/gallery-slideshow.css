@@ -47,7 +47,6 @@
 }
 
 .mini-img:hover {
-    transform: translateY(-2px);
     box-shadow: 3px 3px 10px #181616;
 }
 

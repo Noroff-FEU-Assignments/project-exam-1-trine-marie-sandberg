@@ -1,8 +1,6 @@
 import { imageModal } from "/js/img-modal.js";
-import { gallerySlideShow } from "/js/gallery-slide-show.js";
-gallerySlideShow()
 
-const galleryUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/media?per_page=22&_embed";
+const galleryUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/media?per_page=21&_embed";
 const miniImages = document.querySelector(".mini-images-container");
 miniImages.innerHTML = `<div class="loader"></div>`;
 
@@ -25,7 +23,7 @@ async function getImages() {
 
     } catch(error) {
 
-        console.log(error)
+        console.log(error);
     };
 };
 
