@@ -11,12 +11,21 @@ function search(event) {
     const searchString = event.target.value;
 
             let filteredPosts = postArray.filter(post => {
-                return post.title.rendered.includes(searchString)
+                return post.title.rendered.includes(searchString);
         });
 
         searchListContainer.style.display = "block"
         postList(filteredPosts)
 };
+
+//CLOSE SEARCH WHEN CLICK OUTSIDE
+window.addEventListener('mouseup',function(event) {
+
+    if(event.target != searchBar && event.target.parentNode != searchBar){
+
+        searchListContainer.style.display = 'none';
+    };
+});
 
     async function getPosts() {
 
