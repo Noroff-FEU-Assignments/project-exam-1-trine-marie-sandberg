@@ -44,6 +44,11 @@
     overflow-wrap: break-word;
     min-width: 400px;
     align-self: center;
+    max-width: 70%;
+}
+
+.single-post-content-container :is(p) {
+    max-width: 70%;
 }
 
 .twp-read-time {

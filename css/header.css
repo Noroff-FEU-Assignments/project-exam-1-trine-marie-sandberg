@@ -91,6 +91,17 @@
     margin: 10px;
 }
 
+.search-list-container {
+    display: none;
+    background-color: #ffff;
+    position: absolute;
+    overflow: scroll;
+    max-height: 50vh;
+    top: 45px;
+    left: 50%;
+    z-index: 3;
+}
+
 /*MEDIA QUERIES*/
 @media(max-width: 1000px) {
     .hamburger-icon {
@@ -113,6 +124,11 @@
         display: block;
         padding: 10px;
         font-size: 1.5rem;
+    }
+
+    .search-list-container {
+        top: 40px;
+        left: 0;
     }
 }
 

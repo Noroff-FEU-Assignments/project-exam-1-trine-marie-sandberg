@@ -2,18 +2,20 @@ let searchBar = document.querySelector("#search");
 const allPostsUrl = `https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts?per_page=22&_embed`;
 let filterArray = [];
 let postArray = [];
+
 const searchListContainer = document.querySelector(".search-list-container");
 searchBar.addEventListener("keyup", search);
 
 function search(event) {
+
     const searchString = event.target.value;
 
             let filteredPosts = postArray.filter(post => {
                 return post.title.rendered.includes(searchString)
         });
+
         searchListContainer.style.display = "block"
         postList(filteredPosts)
-        console.log(filteredPosts)
 };
 
     async function getPosts() {
@@ -32,6 +34,7 @@ function search(event) {
     getPosts();
 
        const postList = (postArray) => {
+        
            const htmlString = postArray.map((post) => {
                return `<a href="single-post.html?id=${post.id}">
                           <div class="search-results-container">
@@ -43,5 +46,6 @@ function search(event) {
                         <a>`;
            })
            .join("");
+
            searchListContainer.innerHTML = htmlString;
        };    
