@@ -85,6 +85,12 @@
     text-decoration: underline;
 }
 
+/* SEARCH */
+.search-results-container {
+    padding: 5px;
+    margin: 10px;
+}
+
 /*MEDIA QUERIES*/
 @media(max-width: 1000px) {
     .hamburger-icon {

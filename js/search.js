@@ -1,5 +1,5 @@
 let searchBar = document.querySelector("#search");
-const allPostsUrl = `https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts?per_page=22`;
+const allPostsUrl = `https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts?per_page=22&_embed`;
 let filterArray = [];
 let postArray = [];
 const searchListContainer = document.querySelector(".search-list-container");
@@ -34,10 +34,12 @@ function search(event) {
        const postList = (postArray) => {
            const htmlString = postArray.map((post) => {
                return `<a href="single-post.html?id=${post.id}">
-                          <li>
-                             <h2>${post.title.rendered}</h2>
-                             <p>${post.slug}</p>
-                          </li>
+                          <div class="search-results-container">
+                              <li>
+                                 <h2>${post.title.rendered}</h2>
+                                 <image src="${post._embedded['wp:featuredmedia'][0].source_url}" alt="" class="auto-img">
+                              </li>
+                          </div>
                         <a>`;
            })
            .join("");
