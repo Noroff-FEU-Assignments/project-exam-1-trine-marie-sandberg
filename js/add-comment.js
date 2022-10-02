@@ -27,7 +27,6 @@ export function addComment() {
             createComment.open("POST", "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/comments");
             createComment.setRequestHeader("content-type", "application/json;charset=UTF-8");
             createComment.send(JSON.stringify(commentData));
-            console.log(commentData)
 
             //ERROR HANDLING
             const errorMessage = document.querySelector(".error-message");

@@ -13,7 +13,6 @@ async function getPosts() {
         const postsUrl = `https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts?page=1&_embed`;
         const response = await fetch(postsUrl);
         const postJson = await response.json();
-        console.log(postJson);
 
         postsContainer.innerHTML = "";
         for(let i = 0; i < postJson.length; i++) {

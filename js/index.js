@@ -16,7 +16,7 @@ let cardArray = [];
 async function getPosts() {
 
     try {
-
+    //GET 12 LATEST POSTS
     const response = await fetch(postUrl);
     const json = await response.json();
     postContainer.innerHTML = "";

@@ -17,14 +17,12 @@ nextBtn.onclick = function nextPage() {
     };
 
     async function nextPage() {
-        console.log(page)
 
         try {
             
             let nextUrl = `https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts?page=${page}&_embed`;
             let nextResponse = await fetch(nextUrl);
             let nextJson = await nextResponse.json();
-            console.log(nextJson);
 
             postsContainer.innerHTML = "";
             for(let i = 0; i < nextJson.length; i++) {
@@ -61,14 +59,12 @@ previousBtn.onclick = function nextPage() {
     };
 
     async function nextPage() {
-        console.log(page)
 
         try {
             
             let nextUrl = `https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts?page=${page}&_embed`;
             let nextResponse = await fetch(nextUrl);
             let nextJson = await nextResponse.json();
-            console.log(nextJson);
 
             postsContainer.innerHTML = "";
             for(let i = 0; i < nextJson.length; i++) {
@@ -99,8 +95,7 @@ showMoreBtn.onclick = async function showMore() {
     page ++;
     if(page > 3) {
         postsContainer.innerHTML += "<h2>You have come to the end of the post archive. New posts are added each week.</h2>";
-    }
-    console.log(page)
+    };
 
     try {
         
