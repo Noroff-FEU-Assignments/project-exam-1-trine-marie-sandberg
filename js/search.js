@@ -22,12 +22,8 @@ function search(event) {
 
         const getPosts = await fetch(allPostsUrl);
         postArray = await getPosts.json();
-       
-       
+           
        console.log(postArray)
-       
-
-
 
     } catch(error) {
         console.log(error)
