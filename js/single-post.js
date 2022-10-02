@@ -23,11 +23,13 @@ async function getSinglePost() {
         const postJson = await getPost.json();
 
         try {
+
             singlePostContainer.innerHTML = "";
             singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}" class="featured-img">`;
             document.title = `${postJson.title.rendered} - Post`;
 
         } catch(error) {
+
             singlePostContainer.innerHTML += `<div class="featured-img-placeholder">
                                                  <img src="/img/cofee.jpg" class="auto-img" alt="abstract image of shattered pieces in soft pastell colours">
                                                  <h2 class="featured-img-placeholder-text header-special">Sorry, could not load content</h2>
@@ -51,6 +53,7 @@ async function getSinglePost() {
         removeEmojis.style.display ="none";
 
     } catch(error) {
+        
         console.log(error)
     };
 };

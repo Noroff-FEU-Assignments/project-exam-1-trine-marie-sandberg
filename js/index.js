@@ -1,5 +1,6 @@
 import { gallerySlideShow } from "/js/gallery-slide-show.js";
 import { postCards } from "/js/post-cards.js";
+
 gallerySlideShow();
 
 const postUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts?per_page=12&_embed";
@@ -50,7 +51,9 @@ async function getPosts() {
 
     //LOOP AND DISPLAY POSTCARDS -on click
     function loopCards() {
+
         postContainer.innerHTML = "";
+
         for(let i = indexFrom; i < indexTo; i++) {
 
             postCards(cardArray[i]);
@@ -94,6 +97,7 @@ async function getPosts() {
             indexTo = 4;
             clickNumber = 0;
         };
+        
         //NEGATIVE CLICKNUMBERS
         if(clickNumber === -1) {
             indexFrom = 8;

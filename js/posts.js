@@ -29,9 +29,11 @@ async function getPosts() {
         };
 
     } catch(error) {
+
         console.log(error);
 
         if(!postsContainer.innerHTML.indexOf("word") != -1) {
+            
             postsContainer.innerHTML = `<p>Sorry, could not load content. Please refresh the page, or try again later.</p>
                                         <button class="refresh-btn show-more-btn"><p class="butn-p">REFRESH</p></button>`;
                                         const refreshBtn = document.querySelector(".refresh-btn");

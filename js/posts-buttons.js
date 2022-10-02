@@ -8,10 +8,12 @@ const nextBtn = document.querySelector(".round-next-btn");
 let page = 1;
 
 nextBtn.onclick = function nextPage() {
+    
     page++
     postsCounter.innerHTML = `<p>Page ${page}</p>`;
 
     if(page > 3) {
+
         page = 1;
         postsCounter.innerHTML = `<p>Page ${page}</p>`;
     };
@@ -25,7 +27,9 @@ nextBtn.onclick = function nextPage() {
             let nextJson = await nextResponse.json();
 
             postsContainer.innerHTML = "";
+
             for(let i = 0; i < nextJson.length; i++) {
+
                 postsContainer.innerHTML += `<a href="single-post.html?id=${nextJson[i].id}">
                 <div class="flex-wrap post-cover">
                     <img src="${nextJson[i]._embedded['wp:featuredmedia'][0].source_url}" alt="${nextJson[i]._embedded['wp:featuredmedia'][0].alt_text}" class="post-cover-img">
@@ -54,6 +58,7 @@ previousBtn.onclick = function nextPage() {
     postsCounter.innerHTML = `<p>Page ${page}</p>`;
  
     if(page < 1) {
+
         page = 3;
         postsCounter.innerHTML = `<p>Page ${page}</p>`;
     };
@@ -80,6 +85,7 @@ previousBtn.onclick = function nextPage() {
             };
             
         } catch(error) {
+
             console.log(error);
         };
     };
@@ -94,6 +100,7 @@ showMoreBtn.onclick = async function showMore() {
 
     page ++;
     if(page > 3) {
+
         postsContainer.innerHTML += "<h2>You have come to the end of the post archive. New posts are added each week.</h2>";
     };
 
@@ -116,6 +123,7 @@ showMoreBtn.onclick = async function showMore() {
         };
 
     } catch(error) {
+
         console.log(error);
     };
 };
@@ -125,6 +133,7 @@ showMoreBtn.onclick = async function showMore() {
 const toTop = document.querySelector(".to-top-btn");
 
 toTop.onclick = function() {
+
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 };

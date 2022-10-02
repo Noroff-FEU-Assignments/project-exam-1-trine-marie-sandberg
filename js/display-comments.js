@@ -21,7 +21,6 @@ export async function displayComments() {
                                                    <p>${comments[i].content.rendered}</p>
                                                 </div>`;
             };
-            
         };
 
     } catch(error) {

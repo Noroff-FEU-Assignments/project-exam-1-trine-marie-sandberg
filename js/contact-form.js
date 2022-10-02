@@ -5,6 +5,7 @@ const nameError = document.querySelector(".name-error");
 const emailError = document.querySelector(".email-error");
 const subjectError = document.querySelector(".subject-error");
 const messageError = document.querySelector(".message-error");
+
 //INPUTS
 const name = document.querySelector(".name");
 const email = document.querySelector(".email");
@@ -26,6 +27,7 @@ function formValidation(submit) {
     if (emailValidation(email.value) === true) {
         
         emailError.style.display = "none";
+        
     }  if(email.value.length === 0) {
 
         emailError.style.display = "block";

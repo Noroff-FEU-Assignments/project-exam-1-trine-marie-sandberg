@@ -57,7 +57,9 @@ export function addComment() {
         });
         
         const successBtn = document.querySelector(".coment-success-btn");
+
         successBtn.addEventListener("click", function() {
+            
             location.reload();
         });
     };

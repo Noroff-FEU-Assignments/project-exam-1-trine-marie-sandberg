@@ -8,5 +8,5 @@ export function postCards(cardObject) {
     <img src="${cardObject.imgUrl}" class="card-img" alt="${cardObject.alt}">
     <h3>${cardObject.title}</h3>
     </div>
-    </a>`
+    </a>`;
 };
