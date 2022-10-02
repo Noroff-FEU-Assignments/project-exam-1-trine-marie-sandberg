@@ -11,6 +11,7 @@
 .post-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    min-height: 500px;
 }
 
 .profile-img {
@@ -24,6 +25,7 @@
     width: 100%;
 }
 
+/* BUTTONS AND TEXT */
 .header-home {
     margin-top: 0;
     padding: 0;
@@ -68,7 +70,6 @@
     font-size: 1.5rem;
 }
 
-/* ARROW BUTTON */
 .arrow-btn {
     font-size: 50px;
 }
