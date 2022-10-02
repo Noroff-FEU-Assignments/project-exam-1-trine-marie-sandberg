@@ -49,8 +49,6 @@ async function getSinglePost() {
         const removeEmojis = document.querySelector(".booster-reactions-block");
         removeEmojis.style.display ="none";
 
-        const targetReadtime = document.querySelector(".twp-read-time");
-
     } catch(error) {
         console.log(error)
     };
