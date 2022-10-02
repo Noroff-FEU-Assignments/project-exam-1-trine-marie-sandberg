@@ -35,7 +35,7 @@ export function imageModal(modalImages) {
 
                     if(event.target != imgModalContainer && event.target.parentNode != imgModalContainer){
                         imgModalContainer.style.display = 'none';
-                    }
+                    };
               }); 
 
             } catch(error) {

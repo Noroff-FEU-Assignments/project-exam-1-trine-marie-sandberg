@@ -5,12 +5,6 @@
     max-height: 80vh;
 }
 
-.author-name-img-wrap {
-    padding: 15px;
-    font-size: 0.7rem;
-    text-align: center;
-}
-
 .featured-img-placeholder {
     position: relative;
 }
@@ -75,11 +69,12 @@
     display: hidden;
     position: absolute;
     margin: 0 auto;
+    bottom: 0;
 }
 
 .modal-img {
-    max-height: 90vh;
-    max-width: 90vw;
+    max-height: 80vh;
+    max-width: 80vw;
 }
 
 .cansel-x {

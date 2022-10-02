@@ -24,8 +24,8 @@ async function getSinglePost() {
 
         try {
             singlePostContainer.innerHTML = "";
-            singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}" class="featured-img">
-                                              `;
+            singlePostContainer.innerHTML += `<img src="${postJson._embedded['wp:featuredmedia'][0].source_url}" alt="${postJson._embedded['wp:featuredmedia'][0].alt_text}" class="featured-img">`;
+
         } catch(error) {
             singlePostContainer.innerHTML += `<div class="featured-img-placeholder">
                                                  <img src="/img/cofee.jpg" class="auto-img" alt="abstract image of shattered pieces in soft pastell colours">
@@ -35,15 +35,12 @@ async function getSinglePost() {
 
         aboutAuthorContainer.innerHTML = `<div class="flex-wrap">
                                              <p>${postJson.date}</p>
-                                             <div class="author-name-img-wrap">
-                                                 <image src="/img/profile-img.png" class="profile-img">
-                                                 <h2>${postJson._embedded.author[0].name}</h2>
-                                             </div>
+                                             <p>Written by ${postJson._embedded.author[0].name}</p>
                                           </div>
+                                          <h1>${postJson.title.rendered}</h1>
                                           <p>${postJson.excerpt.rendered}</p>`;
 
-        postContentContainer.innerHTML = `<h1>${postJson.title.rendered}</h1>
-                                          <div>${postJson.content.rendered}</div>`;
+        postContentContainer.innerHTML = `<div>${postJson.content.rendered}</div>`;
 
         //IMPORTING MODAL FOR BIGGER IMG
         const targetModalImages = document.querySelectorAll("figure > img, .wp-block-cover > img");
