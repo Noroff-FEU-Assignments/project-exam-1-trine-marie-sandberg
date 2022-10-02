@@ -1,16 +1,24 @@
-/* HOMEPAGE */
+/* SLIDESHOW */
 .gallery-slideshow-container {
     background-size: cover;
-    height: 700px;
+    height: 100%;
 }
 
 .slideshow-next-btn, .slideshow-previous-btn {
-    padding: 20px 20px;
+    padding: 10px 20px;
     border: none;
     border-radius: 50%;
     background-color: #EEF2EC;
     opacity: 40%;
     cursor: pointer;
+}
+
+.slideshow-next-btn :is(i) {
+    font-size: 40px;
+}
+
+.slideshow-previous-btn :is(i) {
+    font-size: 40px;
 }
 
 .gallery-slideshow-bg {
