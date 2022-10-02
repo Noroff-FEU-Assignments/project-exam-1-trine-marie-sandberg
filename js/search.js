@@ -6,6 +6,7 @@ let postArray = [];
 const searchListContainer = document.querySelector(".search-list-container");
 searchBar.addEventListener("keyup", search);
 
+//FILTER POSTARRAY AFTER SEARCHBAR VALUE
 function search(event) {
 
     const searchString = event.target.value;
@@ -14,8 +15,8 @@ function search(event) {
                 return post.title.rendered.includes(searchString);
         });
 
-        searchListContainer.style.display = "block"
-        postList(filteredPosts)
+        searchListContainer.style.display = "block";
+        postList(filteredPosts);
 };
 
 //CLOSE SEARCH WHEN CLICK OUTSIDE
@@ -27,34 +28,39 @@ window.addEventListener('mouseup',function(event) {
     };
 });
 
-    async function getPosts() {
-
+//GET ALL POSTS
+async function getPosts() {
+    
     try {
-
+        
         const getPosts = await fetch(allPostsUrl);
         postArray = await getPosts.json();
-           
-       console.log(postArray)
 
     } catch(error) {
-        console.log(error)
+
+        console.log(error);
     }};
     
-    getPosts();
+getPosts();
 
-       const postList = (postArray) => {
+//DISPLAY SEARCHRESULT
+const postList = (postArray) => {
         
-           const htmlString = postArray.map((post) => {
-               return `<a href="single-post.html?id=${post.id}">
-                          <div class="search-results-container">
-                              <li>
-                                 <h2>${post.title.rendered}</h2>
-                                 <image src="${post._embedded['wp:featuredmedia'][0].source_url}" alt="" class="auto-img">
-                              </li>
-                          </div>
-                        <a>`;
+    const htmlString = postArray.map((post) => {
+
+        let title = post.title.rendered;
+        title.toLowerCase();
+        
+        return `<a href="single-post.html?id=${post.id}">
+                   <div class="search-results-container">
+                       <li>
+                           <h2>${title}</h2>
+                           <image src="${post._embedded['wp:featuredmedia'][0].source_url}" alt="" class="auto-img">
+                       </li>
+                    </div>
+                <a>`;
            })
            .join("");
 
            searchListContainer.innerHTML = htmlString;
-       };    
+};    
