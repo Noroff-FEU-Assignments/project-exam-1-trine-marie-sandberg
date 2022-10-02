@@ -27,7 +27,8 @@ async function getPosts() {
 
             postCardObject = { title: json[i].title.rendered,
                                postId: json[i].id,
-                               imgUrl: json[i]._embedded['wp:featuredmedia'][0].source_url
+                               imgUrl: json[i]._embedded['wp:featuredmedia'][0].source_url,
+                               alt: json[i]._embedded['wp:featuredmedia'][0].alt_text
                             };
 
             cardArray.push(postCardObject);
