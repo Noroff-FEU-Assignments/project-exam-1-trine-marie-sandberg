@@ -2,7 +2,7 @@ import { gallerySlideShow } from "/js/gallery-slide-show.js";
 import { postCards } from "/js/post-cards.js";
 gallerySlideShow();
 
-const postUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts?_embed";
+const postUrl = "https://gamehub-wp-api.one/mhpb-blogg-content/wp-json/wp/v2/posts?per_page=12&_embed";
 const postContainer = document.querySelector(".post-card-container");
 postContainer.innerHTML = `<div class="loader"></div>`;
 
@@ -88,7 +88,7 @@ async function getPosts() {
             indexTo = 8;
         } if(clickNumber === 2) {
             indexFrom = 8;
-            indexTo = 10;
+            indexTo = 12;
         } if(clickNumber === 3) {
             indexFrom = 0;
             indexTo = 4;
@@ -97,13 +97,13 @@ async function getPosts() {
         //NEGATIVE CLICKNUMBERS
         if(clickNumber === -1) {
             indexFrom = 8;
-            indexTo = 10;
+            indexTo = 12;
         } if(clickNumber === -2) {
             indexFrom = 4;
             indexTo = 8;
         } if(clickNumber === -3) {
             indexFrom = 8;
-            indexTo = 10;
+            indexTo = 12;
             clickNumber = 0;
         } if(clickNumber === 0) {
             indexFrom = 0;
