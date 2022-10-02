@@ -29,12 +29,14 @@
 .post-cover-text {
     margin: 0 auto;
     align-self: center;
-    padding: 20px;
+    padding: 10px;
+    max-width: 700px;
 }
 
 .post-cover-prev > p {
     background-color: #ffff;
     padding: 20px;
+    max-width: 500px;
 }
 
 .posts-sort-wrap {
